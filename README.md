@@ -1,4 +1,4 @@
-# baunwart.org
+# baumwart.org
 
 Website of Baumwart Alb
 
