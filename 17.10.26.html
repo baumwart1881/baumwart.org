@@ -14,7 +14,7 @@
 <meta name="twitter:title" content="Baumwart Alb — Fachgerechte Baumpflege">
 <meta name="twitter:description" content="Baumwart Alb — Fachgerechte Baumpflege, Obstbaumschnitt und sichere Baumfällung im Umland.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swa" rel="stylesheet">
 <style>
   :root{
     --forest:#243626;
@@ -61,7 +61,7 @@
   }
   .nav-cta:hover{background:var(--amber);color:var(--forest-deep);}
   #menu-toggle{display:none;}
-  .burger{display:none;background:none;border:none;font-size:1.6rem;cursor:pointer;color:var(--forest-deep);}
+  .burger{display:none;background:none;border:none;font-size:1.6rem;cursor:pointer;color:var(--forest-deep);} 
 
   /* Hero */
   .hero{
@@ -130,20 +130,16 @@
 <header>
   <div class="wrap">
     <div class="logo">
-      <!-- restore the exact index.html header logo svg -->
-      <svg id="header-logo" width="44" height="44" viewBox="0 0 300 300" role="img" aria-hidden="false" aria-label="Baumwart Alb Logo">
-        <defs>
-          <filter id="softH" x="-20%" y="-20%" width="140%" height="140%">
-            <feGaussianBlur stdDeviation="0.35" result="b"/>
-            <feBlend in="SourceGraphic" in2="b" mode="normal"/>
-          </filter>
-        </defs>
-        <circle cx="150" cy="150" r="144" fill="#f5f2ec" stroke="#4a3728" stroke-width="2"/>
-        <!-- outer rings: use brand colors -->
-        <path d="M150 40 C188 46, 220 70, 244 104 C268 140, 260 180, 220 210 C180 240, 136 238, 102 214 C70 192, 56 158, 70 120 C88 84, 118 46, 150 40 Z" fill="none" stroke="#9fb96a" stroke-width="3"/>
-        <path d="M150 62 C178 68, 204 90, 224 116 C244 144, 238 170, 210 196 C182 222, 150 230, 122 218 C96 206, 82 180, 86 154 C92 126, 112 98, 150 62 Z" fill="none" stroke="#c1a978" stroke-width="2"/>
-        <path d="M150 92 C168 96, 186 108, 198 124 C210 140, 208 156, 194 168 C178 180, 158 184, 138 180 C122 176, 112 166, 110 150 C108 134, 120 116, 150 92 Z" fill="none" stroke="#c1732e" stroke-width="2"/>
-        <circle cx="150" cy="150" r="6" fill="#4a3728"/>
+      <!-- restored header logo SVG matching baumwart.org rings -->
+      <svg id="header-logo" width="44" height="44" viewBox="0 0 300 300" fill="none" aria-hidden="true">
+        <circle cx="150" cy="150" r="140" stroke="#d9cba8" stroke-width="2" fill="none"/>
+        <circle cx="150" cy="150" r="122" stroke="#c1a978" stroke-width="2" fill="none"/>
+        <circle cx="150" cy="150" r="102" stroke="#8a9a5b" stroke-width="2.8" fill="none"/>
+        <circle cx="150" cy="150" r="84" stroke="#d9cba8" stroke-width="2" fill="none"/>
+        <circle cx="150" cy="150" r="64" stroke="#8a9a5b" stroke-width="2" fill="none"/>
+        <circle cx="150" cy="150" r="46" stroke="#c1732e" stroke-width="2.4" fill="none"/>
+        <circle cx="150" cy="150" r="28" stroke="#4a3728" stroke-width="2" fill="none"/>
+        <circle cx="150" cy="150" r="10" fill="#4a3728"/>
       </svg>
       <span>Baumwart Alb</span>
     </div>
