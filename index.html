@@ -139,7 +139,10 @@
   .about-stats{display:grid;grid-template-columns:1fr 1fr;gap:28px 32px;}
   .stat{border-top:1px solid rgba(243,239,228,0.25);padding-top:14px;}
   .stat .n{font-family:"Fraunces",serif;font-size:2.1rem;color:var(--cream);display:block;}
-  .stat .l{font-size:0.85rem;color:var(--cream-dim);} 
+  .stat .l{font-size:0.85rem;color:var(--cream-dim);}
+  .stat .logos{display:flex;align-items:center;gap:16px;margin-bottom:6px;}
+  .stat .logos img{display:block;height:72px;width:auto;}
+  .stat .logos img + img{border-radius:2px;} 
 
   .contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;}
   .contact h2{font-size:clamp(1.7rem,3vw,2.2rem);margin-bottom:16px;}
@@ -329,7 +332,7 @@
     <div class="about-stats">
       <div class="stat"><span class="n">10+</span><span class="l">Jahre praktische Erfahrung</span></div>
       <div class="stat"><span class="n">Streuobst</span><span class="l">Pflege zahlreicher Streuobstwiesen</span></div>
-      <div class="stat"><span class="n">ETW &amp; FLL</span><span class="l">Zertifizierung</span></div>
+      <div class="stat"><span class="logos"><img src="logo-etw.png" width="72" height="72" loading="lazy" alt="Logo European Tree Worker (EAC)"><img src="logo-fll.png" width="50" height="72" loading="lazy" alt="Logo FLL – Forschungsgesellschaft Landschaftsentwicklung Landschaftsbau e. V."></span><span class="l">ETW- &amp; FLL-Zertifizierung</span></div>
       <div class="stat"><span class="n">Baumwart</span><span class="l">zertifiziert</span></div>
     </div>
   </div>
