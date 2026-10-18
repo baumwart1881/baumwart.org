@@ -21,6 +21,7 @@
     --forest-deep:#182319;
     --bark:#4a3728;
     --moss:#8a9a5b;
+    --moss-bright:#9fb96a;
     --cream:#f3efe4;
     --cream-dim:#e8e1d0;
     --amber:#c1732e;
@@ -83,10 +84,10 @@
     display:inline-block;padding:14px 26px;border-radius:2px;font-weight:500;
     text-decoration:none;font-size:0.95rem;transition:all .15s ease;
   }
-  .btn-primary{background:var(--amber);color:var(--cream);}
-  .btn-primary:hover{background:#a55f24;}
-  .btn-ghost{border:1px solid var(--forest);color:var(--forest-deep);}
-  .btn-ghost:hover{background:var(--forest);color:var(--cream);}
+  .btn-primary{background:var(--amber);color:var(--cream);} 
+  .btn-primary:hover{background:#a55f24;} 
+  .btn-ghost{border:1px solid var(--forest);color:var(--forest-deep);} 
+  .btn-ghost:hover{background:var(--forest);color:var(--cream);} 
 
   /* Tree ring signature graphic */
   .ring-graphic{position:relative;display:flex;align-items:center;justify-content:center;}
@@ -104,9 +105,9 @@
   /* Section shared */
   section{padding:80px 0;}
   .section-head{margin-bottom:48px;max-width:60ch;}
-  .section-head .eyebrow{color:var(--moss);}
-  .section-head h2{font-size:clamp(1.7rem,3vw,2.3rem);color:var(--forest-deep);}
-  .section-head p{color:#5a5344;margin-top:12px;}
+  .section-head .eyebrow{color:var(--moss);} 
+  .section-head h2{font-size:clamp(1.7rem,3vw,2.3rem);color:var(--forest-deep);} 
+  .section-head p{color:#5a5344;margin-top:12px;} 
 
   /* Services */
   .services{background:var(--cream-dim);} 
@@ -119,10 +120,7 @@
   /* Process */
   .process .wrap{} 
   .process-list{border-top:1px solid var(--ring);} 
-  .process-item{ 
-    display:grid;grid-template-columns:80px 1fr;gap:24px; 
-    padding:26px 0;border-bottom:1px solid var(--ring); 
-  } 
+  .process-item{ display:grid;grid-template-columns:80px 1fr;gap:24px; padding:26px 0;border-bottom:1px solid var(--ring);} 
   .process-item .step{font-family:"Fraunces",serif;font-style:italic;font-size:1.6rem;color:var(--moss);} 
   .process-item h3{font-size:1.1rem;margin-bottom:6px;} 
   .process-item p{color:#5a5344;font-size:0.93rem;max-width:60ch;} 
@@ -146,17 +144,9 @@
   .contact-list a{text-decoration:none;border-bottom:1px solid var(--moss);} 
   form{display:flex;flex-direction:column;gap:14px;} 
   form label{font-size:0.8rem;font-family:"JetBrains Mono",monospace;color:var(--bark);display:block;margin-bottom:6px;} 
-  form input, form textarea{ 
-    width:100%;background:var(--cream-dim);border:1px solid var(--ring); 
-    padding:12px 14px;font-family:"Work Sans",sans-serif;font-size:0.95rem;border-radius:2px; 
-    color:var(--forest-deep);
-  } 
+  form input, form textarea{ width:100%;background:var(--cream-dim);border:1px solid var(--ring); padding:12px 14px;font-family:"Work Sans",sans-serif;font-size:0.95rem;border-radius:2px; color:var(--forest-deep);} 
   form input:focus, form textarea:focus{outline:2px solid var(--amber);outline-offset:1px;} 
-  form button{ 
-    margin-top:6px;background:var(--forest);color:var(--cream);border:none; 
-    padding:14px 24px;font-size:0.95rem;font-weight:500;border-radius:2px;cursor:pointer; 
-    transition:background .15s ease;align-self:flex-start;
-  } 
+  form button{ margin-top:6px;background:var(--forest);color:var(--cream);border:none; padding:14px 24px;font-size:0.95rem;font-weight:500;border-radius:2px;cursor:pointer; transition:background .15s ease;align-self:flex-start;} 
   form button:hover{background:var(--amber);} 
 
   footer{background:var(--forest-deep);color:var(--cream-dim);padding:32px 0;} 
@@ -174,9 +164,7 @@
     .contact .wrap{grid-template-columns:1fr;} 
     .process-item{grid-template-columns:50px 1fr;} 
   } 
-  @media (prefers-reduced-motion: reduce){ 
-    html{scroll-behavior:auto;} 
-  }
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} }
 </style>
 </head>
 <body>
@@ -184,7 +172,42 @@
 <header>
   <div class="wrap">
     <div class="logo">
-      <svg width="26" height="26" viewBox="0 0 26 26" fill="none" role="img" aria-label="Baumwart Alb Logo"><circle cx="13" cy="13" r="12" stroke="#4a3728" stroke-width="1.4"/><circle cx="13" cy="13" r="8" stroke="#8a9a5b" stroke-width="1.2"/>[...]</svg>
+      <!-- Integrated user logo (vectorized & recolored to site palette). Rings and label merged into logo. -->
+      <svg width="44" height="44" viewBox="0 0 200 200" role="img" aria-label="Baumwart Alb Logo">
+        <title>Baumwart Alb Logo</title>
+        <desc>Logo: Baum mit Kletterer und Jahresringen, Label: jeder Ring ein Jahr Erfahrung</desc>
+        <defs>
+          <style>
+            .crown{fill:var(--moss);stroke:var(--forest-deep);stroke-width:3}
+            .trunk{fill:var(--bark)}
+            .ring{fill:none;stroke:var(--moss-bright)}
+            .outer{fill:none;stroke:var(--bark);stroke-width:8}
+            .climber{fill:var(--forest-deep)}
+            .label{font-family: 'JetBrains Mono', monospace; font-size:12px; fill:var(--bark)}
+          </style>
+        </defs>
+        <!-- outer circle -->
+        <circle cx="100" cy="100" r="95" class="outer" />
+        <!-- multiple inner rings around crown (replace the plain circles) -->
+        <circle cx="100" cy="100" r="72" class="ring" stroke-width="4" />
+        <circle cx="100" cy="100" r="56" class="ring" stroke-width="3" />
+        <circle cx="100" cy="100" r="42" class="ring" stroke-width="2" />
+
+        <!-- tree crown (simplified blob, recolored) -->
+        <path class="crown" d="M60 95 C55 70, 85 60, 95 70 C110 56, 140 68, 140 88 C160 95, 150 120, 120 120 C125 140, 90 132, 85 116 C70 120, 58 110, 60 95 Z" />
+
+        <!-- trunk -->
+        <rect x="92" y="110" width="16" height="42" class="trunk" rx="2" />
+
+        <!-- simple climber silhouette (stylized) -->
+        <g transform="translate(132,100) scale(0.6)">
+          <path class="climber" d="M20 10 L30 10 L40 40 L32 44 L28 30 L24 34 L20 20 Z" />
+          <rect x="-4" y="-6" width="4" height="60" fill="var(--forest-deep)" />
+        </g>
+
+        <!-- merged label along bottom inside circle -->
+        <text x="100" y="178" text-anchor="middle" class="label">jeder Ring ein Jahr Erfahrung</text>
+      </svg>
       Baumwart Alb
     </div>
     <input type="checkbox" id="menu-toggle" style="display:none;">
@@ -210,17 +233,35 @@
       </div>
     </div>
     <div class="ring-graphic">
-      <svg viewBox="0 0 300 300" fill="none" role="img" aria-label="Baumringe Grafik">
-        <circle cx="150" cy="150" r="140" stroke="#d9cba8" stroke-width="1"/>
-        <circle cx="150" cy="150" r="122" stroke="#c1a978" stroke-width="1"/>
-        <circle cx="150" cy="150" r="102" stroke="#8a9a5b" stroke-width="1.4"/>
-        <circle cx="150" cy="150" r="84" stroke="#d9cba8" stroke-width="1"/>
-        <circle cx="150" cy="150" r="64" stroke="#8a9a5b" stroke-width="1"/>
-        <circle cx="150" cy="150" r="46" stroke="#c1732e" stroke-width="1.6"/>
-        <circle cx="150" cy="150" r="28" stroke="#4a3728" stroke-width="1"/>
-        <circle cx="150" cy="150" r="10" fill="#4a3728"/>
+      <!-- Larger logo variant used in hero; crown now has multiple rings and label is integrated. Colors follow site palette. -->
+      <svg viewBox="0 0 300 300" fill="none" role="img" aria-label="Baumwart Logo mit Ringen">
+        <title>Baumwart Alb Logo groß</title>
+        <desc>Große Variante des Logos mit Jahresringen und Kletterer</desc>
+        <defs>
+          <style>
+            .crown{fill:var(--moss);stroke:var(--forest-deep);stroke-width:5}
+            .trunk{fill:var(--bark)}
+            .ring{fill:none;stroke:var(--moss-bright)}
+            .outer{fill:none;stroke:var(--bark);stroke-width:8}
+            .climber{fill:var(--forest-deep)}
+            .label{font-family: 'JetBrains Mono', monospace; font-size:16px; fill:var(--bark)}
+          </style>
+        </defs>
+        <circle cx="150" cy="150" r="145" class="outer" />
+        <circle cx="150" cy="150" r="110" class="ring" stroke-width="6" />
+        <circle cx="150" cy="150" r="86" class="ring" stroke-width="4" />
+        <circle cx="150" cy="150" r="62" class="ring" stroke-width="3" />
+
+        <path class="crown" d="M90 120 C85 95, 120 86, 135 98 C155 84, 190 96, 190 118 C210 125, 198 150, 165 150 C170 174, 130 168, 125 148 C105 152, 88 140, 90 120 Z" />
+        <rect x="142" y="150" width="16" height="60" class="trunk" rx="3" />
+
+        <g transform="translate(190,145) scale(0.9)">
+          <path class="climber" d="M18 8 L26 8 L34 38 L28 42 L26 28 L22 32 L18 18 Z" />
+          <rect x="0" y="-8" width="3" height="80" fill="var(--forest-deep)" />
+        </g>
+
+        <text x="150" y="268" text-anchor="middle" class="label">jeder Ring ein Jahr Erfahrung</text>
       </svg>
-      <span class="ring-label">jeder Ring ein Jahr Erfahrung</span>
     </div>
   </div>
 </section>
