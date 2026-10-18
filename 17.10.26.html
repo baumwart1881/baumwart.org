@@ -14,7 +14,7 @@
 <meta name="twitter:title" content="Baumwart Alb — Fachgerechte Baumpflege">
 <meta name="twitter:description" content="Baumwart Alb — Fachgerechte Baumpflege, Obstbaumschnitt und sichere Baumfällung im Umland.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swa[...]" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
     --forest:#243626;
@@ -210,7 +210,6 @@
       <!-- larger, realistic tree-ring illustration (organic inner rings) + dynamic year rings -->
       <svg id="year-ring-svg" viewBox="0 0 340 340" role="img" aria-hidden="false" aria-label="Baumjahrringe">
         <rect width="100%" height="100%" fill="none"/>
-        <!-- base organic rings (from index.html) centered at 170,170 -->
         <g id="base-rings" transform="translate(10,10)">
           <circle cx="160" cy="160" r="144" fill="#f5f2ec" stroke="#d9cba8" stroke-width="2"/>
           <path d="M160 30 C198 34, 230 60, 250 96 C270 136, 260 178, 225 210 C190 242, 148 244, 110 226 C78 210, 62 180, 70 142 C80 104, 104 66, 160 30 Z" fill="none" stroke="#d9cba8" stroke-width="3"/>
@@ -219,8 +218,7 @@
           <path d="M160 120 C170 122, 178 128, 184 136 C190 144, 188 150, 180 156 C172 162, 160 164, 148 160 C138 156, 132 150, 132 144 C132 138, 140 130, 160 120 Z" fill="none" stroke="#c1732e" stroke-width="1.6"/>
           <circle cx="160" cy="160" r="8" fill="#4a3728"/>
         </g>
-        <!-- year-based rings will be appended here by script -->
-        <g id="year-rings" />
+        <g id="year-rings"></g>
         <g id="ring-label" fill="#4a3728" font-family="JetBrains Mono, monospace" font-size="14" text-anchor="middle">
           <text id="ring-label-text" x="170" y="320">jeder Ring ein Jahr Erfahrung</text>
         </g>
@@ -232,27 +230,24 @@
 
       <script>
         (function () {
-          // Calculate years of experience starting from 2020 inclusive
           var startYear = 2020;
           var now = new Date();
-          var years = now.getFullYear() - startYear + 1; // inclusive
+          var years = now.getFullYear() - startYear + 1;
           if (years < 1) years = 1;
-          // Limit maximum extra rings to avoid overflowing the viewbox
-          var maxExtra = 10; // safety cap
-          var extra = Math.min(years - 1, maxExtra); // inner rings already represent the first few
+
+          var maxExtra = 10;
+          var extra = Math.min(years - 1, maxExtra);
 
           var svg = document.getElementById('year-ring-svg');
           if (!svg) return;
           var ns = 'http://www.w3.org/2000/svg';
           var group = document.getElementById('year-rings');
-          // pick colors cycling through brand palette
           var rootStyles = getComputedStyle(document.documentElement);
           var palette = [rootStyles.getPropertyValue('--moss').trim() || '#8a9a5b', rootStyles.getPropertyValue('--moss-bright').trim() || '#9fb96a', rootStyles.getPropertyValue('--ring').trim() || '#d9cba8', rootStyles.getPropertyValue('--amber').trim() || '#c1732e', rootStyles.getPropertyValue('--bark').trim() || '#4a3728'];
 
-          // base outer radius from organic base is ~144 at center 160; our svg centered at 170
           var center = { x: 170, y: 170 };
           var baseRadius = 144;
-          var spacing = 10; // gap between rings
+          var spacing = 10;
 
           for (var i = 0; i < extra; i++) {
             var r = baseRadius + (i + 1) * spacing;
@@ -269,15 +264,12 @@
             group.appendChild(c);
           }
 
-          // If there are more years than extra, add a subtle text next to label
           var label = document.getElementById('ring-label-text');
           if (label) {
             label.textContent = 'jeder Ring ein Jahr Erfahrung — ' + years + ' Jahre';
           }
-
         })();
       </script>
-
     </div>
   </div>
 </section>
@@ -365,7 +357,7 @@
     <div>
       <span class="eyebrow">Über uns</span>
       <h2>Handwerk aus Leidenschaft</h2>
-      <p>Baumwart Alb wurde 2020 gegr��ndet, von einem Friedhofsgärtner-Azubi, der die Kollegen in den Bäumen bestaunte — vom Gärtnern zur Seilklettertechnik.</p>
+      <p>Baumwart Alb wurde 2020 gegründet, von einem Friedhofsgärtner-Azubi, der die Kollegen in den Bäumen bestaunte — vom Gärtnern zur Seilklettertechnik.</p>
     </div>
     <div class="about-stats">
       <div class="stat"><span class="n">10+</span><span class="l">Jahre praktische Erfahrung</span></div>
