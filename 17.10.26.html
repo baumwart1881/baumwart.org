@@ -50,9 +50,9 @@
   header .wrap{display:flex;align-items:center;justify-content:space-between;height:72px;}
   .logo{display:flex;align-items:center;gap:10px;font-family:"Fraunces",serif;font-weight:600;font-size:1.15rem;color:var(--forest-deep);}
   .logo svg{flex-shrink:0;}
-  nav{display:flex;gap:28px;font-size:0.92rem;}
+  nav{Display:flex;gap:28px;font-size:0.92rem;}
   nav a{text-decoration:none;position:relative;padding:4px 0;}
-  nav a:hover{color:var(--amber);}
+  nav a:hover{color:var(--amber);} 
   .nav-cta{
     background:var(--forest);color:var(--cream);
     padding:9px 18px;border-radius:2px;font-size:0.88rem;
@@ -80,10 +80,7 @@
   .hero h1 em{font-style:italic;color:var(--moss);}
   .hero p{font-size:1.05rem;max-width:46ch;color:#3d4a3a;margin-bottom:32px;}
   .hero-actions{display:flex;gap:14px;flex-wrap:wrap;}
-  .btn{
-    display:inline-block;padding:14px 26px;border-radius:2px;font-weight:500;
-    text-decoration:none;font-size:0.95rem;transition:all .15s ease;
-  }
+  .btn{display:inline-block;padding:14px 26px;border-radius:2px;font-weight:500;text-decoration:none;font-size:0.95rem;transition:all .15s ease;}
   .btn-primary{background:var(--amber);color:var(--cream);} 
   .btn-primary:hover{background:#a55f24;} 
   .btn-ghost{border:1px solid var(--forest);color:var(--forest-deep);} 
@@ -92,11 +89,7 @@
   /* Tree ring signature graphic */
   .ring-graphic{position:relative;display:flex;align-items:center;justify-content:center;}
   .ring-graphic svg{width:100%;max-width:360px;height:auto;}
-  .ring-label{
-    position:absolute;bottom:8px;left:50%;transform:translateX(-50%);
-    font-family:"JetBrains Mono",monospace;font-size:0.72rem;color:var(--bark);
-    text-align:center;letter-spacing:0.03em;
-  }
+  .ring-label{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);font-family:"JetBrains Mono",monospace;font-size:0.72rem;color:var(--bark);text-align:center;letter-spacing:0.03em;}
 
   /* Trust strip */
   .trust{background:var(--forest);color:var(--cream-dim);padding:20px 0;}
@@ -104,7 +97,7 @@
 
   /* Section shared */
   section{padding:80px 0;}
-  .section-head{margin-bottom:48px;max-width:60ch;}
+  .section-head{margin-bottom:48px;max-width:60ch;} 
   .section-head .eyebrow{color:var(--moss);} 
   .section-head h2{font-size:clamp(1.7rem,3vw,2.3rem);color:var(--forest-deep);} 
   .section-head p{color:#5a5344;margin-top:12px;} 
@@ -172,39 +165,20 @@
 <header>
   <div class="wrap">
     <div class="logo">
-      <svg width="44" height="44" viewBox="0 0 200 200" role="img" aria-label="Baumwart Alb Logo" aria-labelledby="logoTitle logoDesc">
-        <title id="logoTitle">Baumwart Alb Logo</title>
-        <desc id="logoDesc">Logo eines Baums mit Kletterer und mehreren Jahresringen</desc>
-        <circle cx="100" cy="100" r="94" fill="#f5f2ec" stroke="#4a3728" stroke-width="7"/>
-        <circle cx="100" cy="100" r="75" fill="none" stroke="#d9cba8" stroke-width="4"/>
-        <circle cx="100" cy="100" r="58" fill="none" stroke="#c1a978" stroke-width="3"/>
-        <circle cx="100" cy="100" r="40" fill="none" stroke="#8a9a5b" stroke-width="2.5"/>
-
-        <path d="M64 100 C56 72, 83 58, 100 70 C111 58, 134 57, 144 74 C160 78, 169 95, 162 111 C172 116, 170 135, 150 140 C150 152, 132 162, 118 156 C114 168, 92 170, 82 157 C75 160, 68 154, 62 143 C51 132, 50 111, 64 100 Z" fill="#9ebd5d" stroke="#243626" stroke-width="3"/>
-        <path d="M65 96 C77 86, 85 81, 95 83 C90 72, 104 66, 117 72 C129 66, 143 73, 149 92 C154 97, 157 102, 160 109 C164 119, 160 131, 145 136 C152 145, 145 154, 134 156 C130 162, 123 166, 114 166 C104 178, 82 179, 74 165 C63 161, 55 150, 56 139 C46 131, 47 116, 65 96 Z" fill="#aee35c" stroke="#243626" stroke-width="2.5" opacity="0.94"/>
-
-        <path d="M84 144 L116 144 L110 150 L105 164 L92 164 L86 151 Z" fill="#4a3728"/>
-        <rect x="95" y="110" width="10" height="52" fill="#4a3728" rx="2"/>
-        <rect x="95" y="117" width="10" height="52" fill="#4a3728" rx="2"/>
-
-        <g transform="translate(120,118)">
-          <path d="M18 8 C11 6, 7 15, 8 21 C12 27, 16 33, 14 40 C11 47, 21 54, 25 60 C28 64, 29 66, 31 72 C33 78, 39 82, 44 81 C48 80, 50 76, 51 71 C53 57, 44 46, 38 41 C34 37, 31 34, 30 28 C29 22, 25 13, 18 8 Z" fill="#4a3728"/>
-          <path d="M14 17 C20 22, 28 22, 31 27" stroke="#f3efe4" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.7"/>
-          <path d="M18 30 C24 34, 32 34, 42 31" stroke="#f3efe4" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.7"/>
-          <path d="M16 45 C24 49, 33 49, 41 46" stroke="#f3efe4" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.7"/>
-        </g>
-
-        <g transform="translate(76,118) scale(1.08)">
-          <path d="M11 10 C15 5, 22 4, 27 10 C31 14, 32 20, 29 28 C27 34, 23 39, 18 43 C13 47, 9 52, 7 59 C6 64, 9 69, 14 70 C19 71, 25 67, 28 61 C31 55, 36 50, 42 46 C47 42, 49 35, 46 28 C43 17, 33 10, 24 9 C16 8, 13 9, 11 10 Z" fill="#4a3728"/>
-        </g>
-
-        <path d="M94 121 L106 121" stroke="#4a3728" stroke-width="4" stroke-linecap="round"/>
-        <path d="M88 127 L110 127" stroke="#4a3728" stroke-width="4" stroke-linecap="round"/>
-        <path d="M82 133 L115 133" stroke="#4a3728" stroke-width="4" stroke-linecap="round"/>
-
-        <g fill="#4a3728" font-family="JetBrains Mono, monospace" font-size="11" text-anchor="middle">
-          <text x="100" y="177">jeder Ring ein Jahr Erfahrung</text>
-        </g>
+      <!-- simplified ring-only logo: concentric, slightly irregular paths to resemble tree rings -->
+      <svg width="26" height="26" viewBox="0 0 300 300" role="img" aria-hidden="false" aria-label="Baumringe">
+        <defs>
+          <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="0.4" result="b"/>
+            <feBlend in="SourceGraphic" in2="b" mode="normal"/>
+          </filter>
+        </defs>
+        <circle cx="150" cy="150" r="144" fill="#f5f2ec" stroke="#4a3728" stroke-width="2"/>
+        <path d="M150 40 C190 42, 222 66, 240 100 C260 140, 240 182, 200 210 C162 236, 120 232, 86 208 C54 184, 44 150, 60 112 C78 74, 110 38, 150 40 Z" fill="none" stroke="#d9cba8" stroke-width="3" stroke-linejoin="round" filter="url(#soft)"/>
+        <path d="M150 64 C178 66, 202 84, 218 110 C232 138, 222 170, 198 192 C174 214, 140 220, 110 208 C84 198, 70 170, 76 140 C84 110, 110 78, 150 64 Z" fill="none" stroke="#c1a978" stroke-width="2.2" stroke-linejoin="round"/>
+        <path d="M150 92 C168 94, 186 106, 198 122 C210 138, 208 156, 192 166 C176 176, 158 178, 142 172 C128 166, 118 154, 116 138 C114 122, 126 106, 150 92 Z" fill="none" stroke="#8a9a5b" stroke-width="2" stroke-linejoin="round" opacity="0.95"/>
+        <path d="M150 118 C158 119, 166 126, 172 135 C178 144, 178 150, 170 156 C162 162, 150 164, 138 160 C128 156, 122 150, 122 142 C122 134, 132 126, 150 118 Z" fill="none" stroke="#c1732e" stroke-width="1.6" stroke-linejoin="round"/>
+        <circle cx="150" cy="150" r="6" fill="#4a3728"/>
       </svg>
       Baumwart Alb
     </div>
@@ -231,32 +205,22 @@
       </div>
     </div>
     <div class="ring-graphic">
-      <svg viewBox="0 0 320 320" role="img" aria-label="Baumwart Alb großes Logo" aria-labelledby="logoBigTitle logoBigDesc">
-        <title id="logoBigTitle">Baumwart Alb großes Logo</title>
-        <desc id="logoBigDesc">Große Version des Logos mit Baumkrone, Kletterer und mehreren Jahresringen</desc>
-        <circle cx="160" cy="160" r="144" fill="#f5f2ec" stroke="#4a3728" stroke-width="10"/>
-        <circle cx="160" cy="160" r="118" fill="none" stroke="#d9cba8" stroke-width="5"/>
-        <circle cx="160" cy="160" r="92" fill="none" stroke="#c1a978" stroke-width="4"/>
-        <circle cx="160" cy="160" r="65" fill="none" stroke="#8a9a5b" stroke-width="3"/>
-
-        <path d="M104 150 C94 118, 130 96, 156 111 C174 92, 209 95, 226 114 C245 118, 255 139, 250 158 C268 166, 264 186, 236 194 C236 208, 212 220, 188 214 C183 232, 154 241, 131 231 C129 246, 105 252, 88 239 C75 228, 72 208, 80 194 C65 186, 60 168, 75 156 C84 151, 94 150, 104 150 Z" fill="#a2df5a" stroke="#243626" stroke-width="4"/>
-        <path d="M104 145 C116 130, 138 123, 155 129 C165 115, 192 119, 206 133 C220 137, 233 146, 243 162 C245 177, 238 188, 222 196 C229 206, 226 221, 211 227 C205 237, 188 246, 171 246 C157 258, 130 261, 114 250 C101 240, 89 226, 85 206 C68 197, 68 176, 82 165 C90 159, 96 152, 104 145 Z" fill="#b8ef6b" stroke="#243626" stroke-width="3" opacity="0.92"/>
-
-        <path d="M138 216 L183 216 L177 225 L168 245 L153 245 L145 225 Z" fill="#4a3728"/>
-        <rect x="155" y="170" width="12" height="68" fill="#4a3728" rx="3"/>
-        <path d="M161 172 L138 132" stroke="#4a3728" stroke-width="8" stroke-linecap="round"/>
-        <path d="M162 172 L184 131" stroke="#4a3728" stroke-width="8" stroke-linecap="round"/>
-
-        <g transform="translate(196,164) scale(1.15)">
-          <path d="M17 11 C8 9, 6 20, 12 28 C18 35, 22 41, 18 49 C14 59, 24 67, 31 75 C34 79, 36 84, 39 92 C42 99, 49 102, 55 100 C60 98, 62 93, 63 87 C65 70, 56 58, 47 51 C40 45, 35 41, 34 32 C33 24, 30 17, 17 11 Z" fill="#4a3728"/>
-          <circle cx="32" cy="21" r="3.8" fill="#f3efe4" opacity="0.9"/>
-          <path d="M17 24 C26 29, 35 29, 46 25" stroke="#f3efe4" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.7"/>
-          <path d="M16 38 C28 43, 39 43, 48 39" stroke="#f3efe4" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.7"/>
-          <path d="M19 52 C28 55, 38 55, 47 51" stroke="#f3efe4" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.7"/>
-        </g>
-
-        <g fill="#4a3728" font-family="JetBrains Mono, monospace" font-size="16" text-anchor="middle">
-          <text x="160" y="280">jeder Ring ein Jahr Erfahrung</text>
+      <!-- larger, realistic tree-ring illustration (concentric irregular rings) -->
+      <svg viewBox="0 0 320 320" role="img" aria-hidden="false" aria-label="Baumjahrringe">
+        <defs>
+          <filter id="gblur" x="-10%" y="-10%" width="120%" height="120%">
+            <feGaussianBlur stdDeviation="0.6"/>
+          </filter>
+        </defs>
+        <rect width="100%" height="100%" fill="none"/>
+        <circle cx="160" cy="160" r="144" fill="#f5f2ec" stroke="#d9cba8" stroke-width="2"/>
+        <path d="M160 30 C198 34, 230 60, 250 96 C270 136, 260 178, 225 210 C190 242, 148 244, 110 226 C78 210, 62 180, 70 142 C80 104, 104 66, 160 30 Z" fill="none" stroke="#d9cba8" stroke-width="5" stroke-linejoin="round"/>
+        <path d="M160 58 C188 62, 214 84, 232 110 C248 138, 244 170, 220 196 C196 222, 166 230, 134 222 C108 214, 92 188, 94 158 C98 128, 118 96, 160 58 Z" fill="none" stroke="#c1a978" stroke-width="4" stroke-linejoin="round"/>
+        <path d="M160 90 C176 94, 190 106, 202 122 C214 138, 212 156, 198 168 C184 180, 164 186, 144 182 C128 178, 118 168, 116 152 C114 136, 126 118, 160 90 Z" fill="none" stroke="#8a9a5b" stroke-width="3" stroke-linejoin="round" opacity="0.98"/>
+        <path d="M160 120 C170 122, 178 128, 184 136 C190 144, 188 150, 180 156 C172 162, 160 164, 148 160 C138 156, 132 150, 132 144 C132 138, 140 130, 160 120 Z" fill="none" stroke="#c1732e" stroke-width="2" stroke-linejoin="round"/>
+        <circle cx="160" cy="160" r="8" fill="#4a3728"/>
+        <g fill="#4a3728" font-family="JetBrains Mono, monospace" font-size="14" text-anchor="middle">
+          <text x="160" y="296">jeder Ring ein Jahr Erfahrung</text>
         </g>
       </svg>
     </div>
