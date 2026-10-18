@@ -207,69 +207,19 @@
       </div>
     </div>
     <div class="ring-graphic">
-      <!-- larger, realistic tree-ring illustration (organic inner rings) + dynamic year rings -->
-      <svg id="year-ring-svg" viewBox="0 0 340 340" role="img" aria-hidden="false" aria-label="Baumjahrringe">
-        <rect width="100%" height="100%" fill="none"/>
-        <g id="base-rings" transform="translate(10,10)">
-          <circle cx="160" cy="160" r="144" fill="#f5f2ec" stroke="#d9cba8" stroke-width="2"/>
-          <path d="M160 30 C198 34, 230 60, 250 96 C270 136, 260 178, 225 210 C190 242, 148 244, 110 226 C78 210, 62 180, 70 142 C80 104, 104 66, 160 30 Z" fill="none" stroke="#d9cba8" stroke-width="3"/>
-          <path d="M160 58 C188 62, 214 84, 232 110 C248 138, 244 170, 220 196 C196 222, 166 230, 134 222 C108 214, 92 188, 94 158 C98 128, 118 96, 160 58 Z" fill="none" stroke="#c1a978" stroke-width="2"/>
-          <path d="M160 90 C176 94, 190 106, 202 122 C214 138, 212 156, 198 168 C184 180, 164 186, 144 182 C128 178, 118 168, 116 152 C114 136, 126 118, 160 90 Z" fill="none" stroke="#8a9a5b" stroke-width="2"/>
-          <path d="M160 120 C170 122, 178 128, 184 136 C190 144, 188 150, 180 156 C172 162, 160 164, 148 160 C138 156, 132 150, 132 144 C132 138, 140 130, 160 120 Z" fill="none" stroke="#c1732e" stroke-width="1.6"/>
-          <circle cx="160" cy="160" r="8" fill="#4a3728"/>
-        </g>
-        <g id="year-rings"></g>
-        <g id="ring-label" fill="#4a3728" font-family="JetBrains Mono, monospace" font-size="14" text-anchor="middle">
-          <text id="ring-label-text" x="170" y="320">jeder Ring ein Jahr Erfahrung</text>
+      <svg viewBox="0 0 300 300" fill="none">
+        <circle cx="150" cy="150" r="140" stroke="#d9cba8" stroke-width="1"/>
+        <circle cx="150" cy="150" r="122" stroke="#c1a978" stroke-width="1"/>
+        <circle cx="150" cy="150" r="102" stroke="#8a9a5b" stroke-width="1.4"/>
+        <circle cx="150" cy="150" r="84" stroke="#d9cba8" stroke-width="1"/>
+        <circle cx="150" cy="150" r="64" stroke="#8a9a5b" stroke-width="1"/>
+        <circle cx="150" cy="150" r="46" stroke="#c1732e" stroke-width="1.6"/>
+        <circle cx="150" cy="150" r="28" stroke="#4a3728" stroke-width="1"/>
+        <circle cx="150" cy="150" r="10" fill="#4a3728"/>
+        <g fill="#4a3728" font-family="JetBrains Mono, monospace" font-size="14" text-anchor="middle">
+          <text x="150" y="286">jeder Ring ein Jahr Erfahrung</text>
         </g>
       </svg>
-      
-      <noscript>
-        <span class="ring-label">jeder Ring ein Jahr Erfahrung</span>
-      </noscript>
-
-      <script>
-        (function () {
-          var startYear = 2020;
-          var now = new Date();
-          var years = now.getFullYear() - startYear + 1;
-          if (years < 1) years = 1;
-
-          var maxExtra = 10;
-          var extra = Math.min(years - 1, maxExtra);
-
-          var svg = document.getElementById('year-ring-svg');
-          if (!svg) return;
-          var ns = 'http://www.w3.org/2000/svg';
-          var group = document.getElementById('year-rings');
-          var rootStyles = getComputedStyle(document.documentElement);
-          var palette = [rootStyles.getPropertyValue('--moss').trim() || '#8a9a5b', rootStyles.getPropertyValue('--moss-bright').trim() || '#9fb96a', rootStyles.getPropertyValue('--ring').trim() || '#d9cba8', rootStyles.getPropertyValue('--amber').trim() || '#c1732e', rootStyles.getPropertyValue('--bark').trim() || '#4a3728'];
-
-          var center = { x: 170, y: 170 };
-          var baseRadius = 144;
-          var spacing = 10;
-
-          for (var i = 0; i < extra; i++) {
-            var r = baseRadius + (i + 1) * spacing;
-            var c = document.createElementNS(ns, 'circle');
-            c.setAttribute('cx', center.x);
-            c.setAttribute('cy', center.y);
-            c.setAttribute('r', r.toString());
-            c.setAttribute('fill', 'none');
-            var color = palette[i % palette.length];
-            c.setAttribute('stroke', color);
-            c.setAttribute('stroke-width', (1.4 - Math.min(i * 0.12, 0.9)).toString());
-            c.setAttribute('opacity', '0.95');
-            c.setAttribute('vector-effect', 'non-scaling-stroke');
-            group.appendChild(c);
-          }
-
-          var label = document.getElementById('ring-label-text');
-          if (label) {
-            label.textContent = 'jeder Ring ein Jahr Erfahrung — ' + years + ' Jahre';
-          }
-        })();
-      </script>
     </div>
   </div>
 </section>
