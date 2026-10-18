@@ -14,7 +14,7 @@
 <meta name="twitter:title" content="Baumwart Alb — Fachgerechte Baumpflege">
 <meta name="twitter:description" content="Baumwart Alb — Fachgerechte Baumpflege, Obstbaumschnitt und sichere Baumfällung im Umland.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swa[...]" rel="stylesheet">
 <style>
   :root{
     --forest:#243626;
@@ -139,7 +139,7 @@
   form label{font-size:0.8rem;font-family:"JetBrains Mono",monospace;color:var(--bark);display:block;margin-bottom:6px;} 
   form input, form textarea{ width:100%;background:var(--cream-dim);border:1px solid var(--ring); padding:12px 14px;font-family:"Work Sans",sans-serif;font-size:0.95rem;border-radius:2px; color:var(--forest-deep);} 
   form input:focus, form textarea:focus{outline:2px solid var(--amber);outline-offset:1px;} 
-  form button{ margin-top:6px;background:var(--forest);color:var(--cream);border:none; padding:14px 24px;font-size:0.95rem;font-weight:500;border-radius:2px;cursor:pointer; transition:background .15s ease;align-self:flex-start;} 
+  form button{ margin-top:6px;background:var(--forest);color:var(--cream);border:none; padding:14px 24px;font-size:0.95rem;font-weight:500;border-radius:2px;cursor:pointer; transition:background .15s ease;} 
   form button:hover{background:var(--amber);} 
 
   footer{background:var(--forest-deep);color:var(--cream-dim);padding:32px 0;} 
@@ -166,7 +166,7 @@
   <div class="wrap">
     <div class="logo">
       <!-- simplified ring-only logo: concentric, slightly irregular paths to resemble tree rings -->
-      <svg width="26" height="26" viewBox="0 0 300 300" role="img" aria-hidden="false" aria-label="Baumringe">
+      <svg id="logo-svg" width="26" height="26" viewBox="0 0 300 300" role="img" aria-hidden="false" aria-label="Baumringe">
         <defs>
           <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
             <feGaussianBlur stdDeviation="0.4" result="b"/>
@@ -174,10 +174,7 @@
           </filter>
         </defs>
         <circle cx="150" cy="150" r="144" fill="#f5f2ec" stroke="#4a3728" stroke-width="2"/>
-        <path d="M150 40 C190 42, 222 66, 240 100 C260 140, 240 182, 200 210 C162 236, 120 232, 86 208 C54 184, 44 150, 60 112 C78 74, 110 38, 150 40 Z" fill="none" stroke="#d9cba8" stroke-width="3" stroke-linejoin="round" filter="url(#soft)"/>
-        <path d="M150 64 C178 66, 202 84, 218 110 C232 138, 222 170, 198 192 C174 214, 140 220, 110 208 C84 198, 70 170, 76 140 C84 110, 110 78, 150 64 Z" fill="none" stroke="#c1a978" stroke-width="2.2" stroke-linejoin="round"/>
-        <path d="M150 92 C168 94, 186 106, 198 122 C210 138, 208 156, 192 166 C176 176, 158 178, 142 172 C128 166, 118 154, 116 138 C114 122, 126 106, 150 92 Z" fill="none" stroke="#8a9a5b" stroke-width="2" stroke-linejoin="round" opacity="0.95"/>
-        <path d="M150 118 C158 119, 166 126, 172 135 C178 144, 178 150, 170 156 C162 162, 150 164, 138 160 C128 156, 122 150, 122 142 C122 134, 132 126, 150 118 Z" fill="none" stroke="#c1732e" stroke-width="1.6" stroke-linejoin="round"/>
+        <g id="logo-rings"></g>
         <circle cx="150" cy="150" r="6" fill="#4a3728"/>
       </svg>
       Baumwart Alb
@@ -206,7 +203,7 @@
     </div>
     <div class="ring-graphic">
       <!-- larger, realistic tree-ring illustration (concentric irregular rings) -->
-      <svg viewBox="0 0 320 320" role="img" aria-hidden="false" aria-label="Baumjahrringe">
+      <svg id="hero-svg" viewBox="0 0 320 320" role="img" aria-hidden="false" aria-label="Baumjahrringe">
         <defs>
           <filter id="gblur" x="-10%" y="-10%" width="120%" height="120%">
             <feGaussianBlur stdDeviation="0.6"/>
@@ -214,13 +211,10 @@
         </defs>
         <rect width="100%" height="100%" fill="none"/>
         <circle cx="160" cy="160" r="144" fill="#f5f2ec" stroke="#d9cba8" stroke-width="2"/>
-        <path d="M160 30 C198 34, 230 60, 250 96 C270 136, 260 178, 225 210 C190 242, 148 244, 110 226 C78 210, 62 180, 70 142 C80 104, 104 66, 160 30 Z" fill="none" stroke="#d9cba8" stroke-width="5" stroke-linejoin="round"/>
-        <path d="M160 58 C188 62, 214 84, 232 110 C248 138, 244 170, 220 196 C196 222, 166 230, 134 222 C108 214, 92 188, 94 158 C98 128, 118 96, 160 58 Z" fill="none" stroke="#c1a978" stroke-width="4" stroke-linejoin="round"/>
-        <path d="M160 90 C176 94, 190 106, 202 122 C214 138, 212 156, 198 168 C184 180, 164 186, 144 182 C128 178, 118 168, 116 152 C114 136, 126 118, 160 90 Z" fill="none" stroke="#8a9a5b" stroke-width="3" stroke-linejoin="round" opacity="0.98"/>
-        <path d="M160 120 C170 122, 178 128, 184 136 C190 144, 188 150, 180 156 C172 162, 160 164, 148 160 C138 156, 132 150, 132 144 C132 138, 140 130, 160 120 Z" fill="none" stroke="#c1732e" stroke-width="2" stroke-linejoin="round"/>
+        <g id="hero-rings"></g>
         <circle cx="160" cy="160" r="8" fill="#4a3728"/>
         <g fill="#4a3728" font-family="JetBrains Mono, monospace" font-size="14" text-anchor="middle">
-          <text x="160" y="296">jeder Ring ein Jahr Erfahrung</text>
+          <text id="ring-count-text" x="160" y="296">jeder Ring ein Jahr Erfahrung</text>
         </g>
       </svg>
     </div>
@@ -392,6 +386,84 @@
       alert('Falls Ihr E-Mail-Client nicht geöffnet wurde, senden Sie bitte die Anfrage an: ' + to);
     }, 700);
   });
+})();
+</script>
+
+<script>
+// Dynamisch Ringe einfügen basierend auf Jahren seit 2020
+(function () {
+  var foundingYear = 2020;
+  var now = new Date();
+  var years = now.getFullYear() - foundingYear;
+  if (years < 1) years = 1; // mindestens ein Ring
+
+  function createRings(svgId, groupId, cx, cy, outerRadius) {
+    var svg = document.getElementById(svgId);
+    var g = document.getElementById(groupId);
+    if (!svg || !g) return;
+    // clear existing
+    while (g.firstChild) g.removeChild(g.firstChild);
+
+    var base = Math.max(18, outerRadius * 0.15);
+    var spacing = (outerRadius - base) / Math.max(1, years);
+    var colors = ['#d9cba8', '#c1a978', '#8a9a5b', '#c1732e'];
+
+    for (var i = 0; i < years; i++) {
+      var r = Math.round(base + i * spacing);
+      // create slightly imperfect ring by drawing an ellipse and rotating it a bit
+      var el = document.createElementNS('http://www.w3.org/2000/svg', 'ellipse');
+      el.setAttribute('cx', cx);
+      el.setAttribute('cy', cy);
+      el.setAttribute('rx', r * (1 + (i % 2 ? 0.02 : -0.02)) );
+      el.setAttribute('ry', r * (1 + (i % 3 ? -0.01 : 0.03)) );
+      el.setAttribute('fill', 'none');
+      el.setAttribute('stroke', colors[i % colors.length]);
+      el.setAttribute('stroke-width', Math.max(1, 6 - (i * 0.3)) );
+      // small rotation to make rings look irregular
+      var rot = (i % 7) * 3 - 9; // -9..+9
+      el.setAttribute('transform', 'rotate(' + rot + ' ' + cx + ' ' + cy + ')');
+      el.setAttribute('opacity', 0.98);
+      g.appendChild(el);
+    }
+  }
+
+  // Hero svg: center 160,160 outer radius ~130
+  createRings('hero-svg', 'hero-rings', 160, 160, 130);
+  // Logo svg: center 150,150 outer radius ~120 (smaller number of rings to stay legible)
+  // We'll cap logo rings at 5 so it doesn't get too dense
+  var logoYears = Math.min(years, 5);
+  // temporary override inside createRings-like function for logo
+  (function () {
+    var svgId = 'logo-svg', groupId = 'logo-rings', cx = 150, cy = 150, outerRadius = 110;
+    var svg = document.getElementById(svgId);
+    var g = document.getElementById(groupId);
+    if (!svg || !g) return;
+    while (g.firstChild) g.removeChild(g.firstChild);
+    var base = Math.max(12, outerRadius * 0.2);
+    var spacing = (outerRadius - base) / Math.max(1, logoYears);
+    var colors = ['#d9cba8', '#c1a978', '#8a9a5b', '#c1732e'];
+    for (var i = 0; i < logoYears; i++) {
+      var r = Math.round(base + i * spacing);
+      var el = document.createElementNS('http://www.w3.org/2000/svg', 'ellipse');
+      el.setAttribute('cx', cx);
+      el.setAttribute('cy', cy);
+      el.setAttribute('rx', r * (1 + (i % 2 ? 0.02 : -0.02)) );
+      el.setAttribute('ry', r * (1 + (i % 3 ? -0.01 : 0.03)) );
+      el.setAttribute('fill', 'none');
+      el.setAttribute('stroke', colors[i % colors.length]);
+      el.setAttribute('stroke-width', Math.max(1, 5 - (i * 0.3)) );
+      var rot = (i % 7) * 3 - 9;
+      el.setAttribute('transform', 'rotate(' + rot + ' ' + cx + ' ' + cy + ')');
+      el.setAttribute('opacity', 0.98);
+      g.appendChild(el);
+    }
+  })();
+
+  // update label text with computed years
+  var label = document.getElementById('ring-count-text');
+  if (label) {
+    label.textContent = years + (years === 1 ? ' Jahr Erfahrung — jeder Ring = 1 Jahr' : ' Jahre Erfahrung — jeder Ring = 1 Jahr');
+  }
 })();
 </script>
 
