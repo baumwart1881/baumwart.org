@@ -77,7 +77,7 @@
     text-transform:uppercase;color:var(--amber);margin-bottom:18px;display:block;
   }
   .hero h1{font-size:clamp(2.2rem,4.4vw,3.4rem);line-height:1.08;color:var(--forest-deep);margin-bottom:22px;}
-  .hero h1 em{font-style:italic;color:var(--moss);}
+  .hero h1 em{font-style:italic;color:var(--moss);} 
   .hero p{font-size:1.05rem;max-width:46ch;color:#3d4a3a;margin-bottom:32px;}
   .hero-actions{display:flex;gap:14px;flex-wrap:wrap;}
   .btn{display:inline-block;padding:14px 26px;border-radius:2px;font-weight:500;text-decoration:none;font-size:0.95rem;transition:all .15s ease;}
@@ -139,7 +139,7 @@
   form label{font-size:0.8rem;font-family:"JetBrains Mono",monospace;color:var(--bark);display:block;margin-bottom:6px;} 
   form input, form textarea{ width:100%;background:var(--cream-dim);border:1px solid var(--ring); padding:12px 14px;font-family:"Work Sans",sans-serif;font-size:0.95rem;border-radius:2px; color:var(--forest-deep);} 
   form input:focus, form textarea:focus{outline:2px solid var(--amber);outline-offset:1px;} 
-  form button{ margin-top:6px;background:var(--forest);color:var(--cream);border:none; padding:14px 24px;font-size:0.95rem;font-weight:500;border-radius:2px;cursor:pointer; transition:background .15s ease;} 
+  form button{ margin-top:6px;background:var(--forest);color:var(--cream);border:none; padding:14px 24px;font-size:0.95rem;font-weight:500;border-radius:2px;cursor:pointer; transition:background .15s ease;align-self:flex-start;} 
   form button:hover{background:var(--amber);} 
 
   footer{background:var(--forest-deep);color:var(--cream-dim);padding:32px 0;} 
@@ -177,9 +177,9 @@
         </defs>
         <circle cx="150" cy="150" r="144" fill="#f5f2ec" stroke="#4a3728" stroke-width="2"/>
         <!-- outer rings: use brand colors -->
-        <path d="M150 40 C188 46, 220 70, 244 104 C268 140, 260 180, 220 210 C180 240, 136 238, 102 214 C70 192, 56 158, 70 120 C88 84, 118 46, 150 40 Z" fill="none" stroke="#9fb96a" stroke-width="3" opacity="0.95" filter="url(#softH)"/>
-        <path d="M150 62 C178 68, 204 90, 224 116 C244 144, 238 170, 210 196 C182 222, 150 230, 122 218 C96 206, 82 180, 86 154 C92 126, 112 98, 150 62 Z" fill="none" stroke="#c1a978" stroke-width="2.5" opacity="0.95"/>
-        <path d="M150 92 C168 96, 186 108, 198 124 C210 140, 208 156, 194 168 C178 180, 158 184, 138 180 C122 176, 112 166, 110 150 C108 134, 120 116, 150 92 Z" fill="none" stroke="#c1732e" stroke-width="2" opacity="0.98"/>
+        <path d="M150 40 C188 46, 220 70, 244 104 C268 140, 260 180, 220 210 C180 240, 136 238, 102 214 C70 192, 56 158, 70 120 C88 84, 118 46, 150 40 Z" fill="none" stroke="#9fb96a" stroke-width="3"/>
+        <path d="M150 62 C178 68, 204 90, 224 116 C244 144, 238 170, 210 196 C182 222, 150 230, 122 218 C96 206, 82 180, 86 154 C92 126, 112 98, 150 62 Z" fill="none" stroke="#c1a978" stroke-width="2"/>
+        <path d="M150 92 C168 96, 186 108, 198 124 C210 140, 208 156, 194 168 C178 180, 158 184, 138 180 C122 176, 112 166, 110 150 C108 134, 120 116, 150 92 Z" fill="none" stroke="#c1732e" stroke-width="2"/>
         <circle cx="150" cy="150" r="6" fill="#4a3728"/>
       </svg>
       <span>Baumwart Alb</span>
@@ -207,24 +207,77 @@
       </div>
     </div>
     <div class="ring-graphic">
-      <!-- larger, realistic tree-ring illustration (concentric irregular rings) -->
-      <svg viewBox="0 0 320 320" role="img" aria-hidden="false" aria-label="Baumjahrringe">
-        <defs>
-          <filter id="gblur" x="-10%" y="-10%" width="120%" height="120%">
-            <feGaussianBlur stdDeviation="0.6"/>
-          </filter>
-        </defs>
+      <!-- larger, realistic tree-ring illustration (organic inner rings) + dynamic year rings -->
+      <svg id="year-ring-svg" viewBox="0 0 340 340" role="img" aria-hidden="false" aria-label="Baumjahrringe">
         <rect width="100%" height="100%" fill="none"/>
-        <circle cx="160" cy="160" r="144" fill="#f5f2ec" stroke="#d9cba8" stroke-width="2"/>
-        <path d="M160 30 C198 34, 230 60, 250 96 C270 136, 260 178, 225 210 C190 242, 148 244, 110 226 C78 210, 62 180, 70 142 C80 104, 104 66, 160 30 Z" fill="none" stroke="#d9cba8" stroke-width="3"/>
-        <path d="M160 58 C188 62, 214 84, 232 110 C248 138, 244 170, 220 196 C196 222, 166 230, 134 222 C108 214, 92 188, 94 158 C98 128, 118 96, 160 58 Z" fill="none" stroke="#c1a978" stroke-width="2.5"/>
-        <path d="M160 90 C176 94, 190 106, 202 122 C214 138, 212 156, 198 168 C184 180, 164 186, 144 182 C128 178, 118 168, 116 152 C114 136, 126 118, 160 90 Z" fill="none" stroke="#8a9a5b" stroke-width="2"/>
-        <path d="M160 120 C170 122, 178 128, 184 136 C190 144, 188 150, 180 156 C172 162, 160 164, 148 160 C138 156, 132 150, 132 144 C132 138, 140 130, 160 120 Z" fill="none" stroke="#c1732e" stroke-width="1.8"/>
-        <circle cx="160" cy="160" r="8" fill="#4a3728"/>
-        <g fill="#4a3728" font-family="JetBrains Mono, monospace" font-size="14" text-anchor="middle">
-          <text x="160" y="296">jeder Ring ein Jahr Erfahrung</text>
+        <!-- base organic rings (from index.html) centered at 170,170 -->
+        <g id="base-rings" transform="translate(10,10)">
+          <circle cx="160" cy="160" r="144" fill="#f5f2ec" stroke="#d9cba8" stroke-width="2"/>
+          <path d="M160 30 C198 34, 230 60, 250 96 C270 136, 260 178, 225 210 C190 242, 148 244, 110 226 C78 210, 62 180, 70 142 C80 104, 104 66, 160 30 Z" fill="none" stroke="#d9cba8" stroke-width="3"/>
+          <path d="M160 58 C188 62, 214 84, 232 110 C248 138, 244 170, 220 196 C196 222, 166 230, 134 222 C108 214, 92 188, 94 158 C98 128, 118 96, 160 58 Z" fill="none" stroke="#c1a978" stroke-width="2"/>
+          <path d="M160 90 C176 94, 190 106, 202 122 C214 138, 212 156, 198 168 C184 180, 164 186, 144 182 C128 178, 118 168, 116 152 C114 136, 126 118, 160 90 Z" fill="none" stroke="#8a9a5b" stroke-width="2"/>
+          <path d="M160 120 C170 122, 178 128, 184 136 C190 144, 188 150, 180 156 C172 162, 160 164, 148 160 C138 156, 132 150, 132 144 C132 138, 140 130, 160 120 Z" fill="none" stroke="#c1732e" stroke-width="1.6"/>
+          <circle cx="160" cy="160" r="8" fill="#4a3728"/>
+        </g>
+        <!-- year-based rings will be appended here by script -->
+        <g id="year-rings" />
+        <g id="ring-label" fill="#4a3728" font-family="JetBrains Mono, monospace" font-size="14" text-anchor="middle">
+          <text id="ring-label-text" x="170" y="320">jeder Ring ein Jahr Erfahrung</text>
         </g>
       </svg>
+      
+      <noscript>
+        <span class="ring-label">jeder Ring ein Jahr Erfahrung</span>
+      </noscript>
+
+      <script>
+        (function () {
+          // Calculate years of experience starting from 2020 inclusive
+          var startYear = 2020;
+          var now = new Date();
+          var years = now.getFullYear() - startYear + 1; // inclusive
+          if (years < 1) years = 1;
+          // Limit maximum extra rings to avoid overflowing the viewbox
+          var maxExtra = 10; // safety cap
+          var extra = Math.min(years - 1, maxExtra); // inner rings already represent the first few
+
+          var svg = document.getElementById('year-ring-svg');
+          if (!svg) return;
+          var ns = 'http://www.w3.org/2000/svg';
+          var group = document.getElementById('year-rings');
+          // pick colors cycling through brand palette
+          var rootStyles = getComputedStyle(document.documentElement);
+          var palette = [rootStyles.getPropertyValue('--moss').trim() || '#8a9a5b', rootStyles.getPropertyValue('--moss-bright').trim() || '#9fb96a', rootStyles.getPropertyValue('--ring').trim() || '#d9cba8', rootStyles.getPropertyValue('--amber').trim() || '#c1732e', rootStyles.getPropertyValue('--bark').trim() || '#4a3728'];
+
+          // base outer radius from organic base is ~144 at center 160; our svg centered at 170
+          var center = { x: 170, y: 170 };
+          var baseRadius = 144;
+          var spacing = 10; // gap between rings
+
+          for (var i = 0; i < extra; i++) {
+            var r = baseRadius + (i + 1) * spacing;
+            var c = document.createElementNS(ns, 'circle');
+            c.setAttribute('cx', center.x);
+            c.setAttribute('cy', center.y);
+            c.setAttribute('r', r.toString());
+            c.setAttribute('fill', 'none');
+            var color = palette[i % palette.length];
+            c.setAttribute('stroke', color);
+            c.setAttribute('stroke-width', (1.4 - Math.min(i * 0.12, 0.9)).toString());
+            c.setAttribute('opacity', '0.95');
+            c.setAttribute('vector-effect', 'non-scaling-stroke');
+            group.appendChild(c);
+          }
+
+          // If there are more years than extra, add a subtle text next to label
+          var label = document.getElementById('ring-label-text');
+          if (label) {
+            label.textContent = 'jeder Ring ein Jahr Erfahrung — ' + years + ' Jahre';
+          }
+
+        })();
+      </script>
+
     </div>
   </div>
 </section>
@@ -312,7 +365,7 @@
     <div>
       <span class="eyebrow">Über uns</span>
       <h2>Handwerk aus Leidenschaft</h2>
-      <p>Baumwart Alb wurde 2020 gegründet, von einem Friedhofsgärtner-Azubi, der die Kollegen in den Bäumen bestaunte — vom Gärtnern zur Seilklettertechnik.</p>
+      <p>Baumwart Alb wurde 2020 gegr��ndet, von einem Friedhofsgärtner-Azubi, der die Kollegen in den Bäumen bestaunte — vom Gärtnern zur Seilklettertechnik.</p>
     </div>
     <div class="about-stats">
       <div class="stat"><span class="n">10+</span><span class="l">Jahre praktische Erfahrung</span></div>
