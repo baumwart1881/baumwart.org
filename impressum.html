@@ -7,13 +7,18 @@
 <meta name="description" content="Impressum und Anbieterkennzeichnung von Baumwart Alb, Baumpflege und zertifizierter Obstbaumwart in Münsingen.">
 <meta name="robots" content="noindex, follow">
 <link rel="canonical" href="https://baumwart.org/impressum.html">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;1,500&family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="icon" href="favicon.ico" sizes="16x16 32x32 48x48">
 <link rel="icon" href="favicon-192.png" type="image/png" sizes="192x192">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preload" href="fonts/WorkSans.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="fonts/Fraunces-Roman.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="fonts/Fraunces-Italic.woff" as="font" type="font/woff" crossorigin>
 <style>
+  @font-face{font-family:"Fraunces";font-style:normal;font-weight:400 600;font-display:swap;src:url("fonts/Fraunces-Roman.woff") format("woff");}
+  @font-face{font-family:"Fraunces";font-style:italic;font-weight:400 600;font-display:swap;src:url("fonts/Fraunces-Italic.woff") format("woff");}
+  @font-face{font-family:"Work Sans";font-style:normal;font-weight:400 600;font-display:swap;src:url("fonts/WorkSans.woff") format("woff");}
+  @font-face{font-family:"JetBrains Mono";font-style:normal;font-weight:400 500;font-display:swap;src:url("fonts/JetBrainsMono.woff") format("woff");}
+
   :root{--forest:#243626;--forest-deep:#182319;--bark:#4a3728;--moss:#8a9a5b;--cream:#f3efe4;--cream-dim:#e8e1d0;--amber:#c1732e;--ring:#d9cba8;}
   *{margin:0;padding:0;box-sizing:border-box;}
   body{background:var(--cream);color:var(--forest-deep);font-family:"Work Sans",sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column;}

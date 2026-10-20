@@ -26,10 +26,15 @@
 "openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"07:00","closes":"17:00"}],
 "hasOfferCatalog":{"@type":"OfferCatalog","name":"Leistungen","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Kronenschnitt & Pflege"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Baumfällung"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Baumkontrolle & Gutachten"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Pflege von Streuobstwiesen"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Sturmschaden-Notdienst"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Häckseldienst"}}]}}
 </script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;1,500&family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preload" href="fonts/WorkSans.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="fonts/Fraunces-Roman.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="fonts/Fraunces-Italic.woff" as="font" type="font/woff" crossorigin>
 <style>
+  @font-face{font-family:"Fraunces";font-style:normal;font-weight:400 600;font-display:swap;src:url("fonts/Fraunces-Roman.woff") format("woff");}
+  @font-face{font-family:"Fraunces";font-style:italic;font-weight:400 600;font-display:swap;src:url("fonts/Fraunces-Italic.woff") format("woff");}
+  @font-face{font-family:"Work Sans";font-style:normal;font-weight:400 600;font-display:swap;src:url("fonts/WorkSans.woff") format("woff");}
+  @font-face{font-family:"JetBrains Mono";font-style:normal;font-weight:400 500;font-display:swap;src:url("fonts/JetBrainsMono.woff") format("woff");}
+
   :root{
     --forest:#243626;
     --forest-deep:#182319;
@@ -62,6 +67,8 @@
   header .wrap{display:flex;align-items:center;justify-content:space-between;height:72px;}
   .logo{display:flex;align-items:center;gap:10px;font-family:"Fraunces",serif;font-weight:600;font-size:1.15rem;color:var(--forest-deep);}
   .logo svg{flex-shrink:0;}
+  .logo{text-decoration:none;cursor:pointer;}
+  .logo:focus-visible{outline:2px solid var(--amber);outline-offset:4px;border-radius:2px;}
   nav{display:flex;gap:28px;font-size:0.92rem;margin-left:auto;}
   nav a{text-decoration:none;position:relative;padding:4px 0;}
   nav a:hover{color:var(--amber);}
@@ -220,14 +227,14 @@
   }
 </style>
 </head>
-<body>
+<body id="top">
 
 <header>
   <div class="wrap">
-    <div class="logo">
+    <a class="logo" href="#top" aria-label="Baumwart Alb – zurück nach oben">
       <svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true"><circle cx="13" cy="13" r="12" stroke="#4a3728" stroke-width="1.4"/><circle cx="13" cy="13" r="8" stroke="#8a9a5b" stroke-width="1.2"/><circle cx="13" cy="13" r="5" stroke="#c1732e" stroke-width="1.2"/><circle cx="13" cy="13" r="2.2" fill="#4a3728"/></svg>
       Baumwart Alb
-    </div>
+    </a>
     <input type="checkbox" id="menu-toggle" style="display:none;">
     <nav aria-label="Hauptnavigation">
       <a href="#leistungen">Leistungen</a>
@@ -498,6 +505,16 @@
       link.addEventListener('click', function () { toggle.checked = false; });
     });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') toggle.checked = false; });
+
+    // Logo = "Nach oben"-Button (sanft scrollen, außer bei reduzierter Bewegung; keine #top-Adresse in der URL)
+    var logo = document.querySelector('.logo');
+    logo.addEventListener('click', function (e) {
+      e.preventDefault();
+      toggle.checked = false;
+      var ruhig = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      window.scrollTo({ top: 0, behavior: ruhig ? 'auto' : 'smooth' });
+      if (window.history && history.replaceState) history.replaceState(null, '', location.pathname + location.search);
+    });
   })();
 </script>
 
