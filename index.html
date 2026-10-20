@@ -180,15 +180,14 @@
     transition:background .15s ease;align-self:flex-start;
   }
   form button:hover{background:var(--amber);}
-  form select{width:100%;background:var(--cream-dim);border:1px solid var(--ring);padding:12px 14px;font-family:"Work Sans",sans-serif;font-size:0.95rem;border-radius:2px;color:var(--forest-deep);}
-  form select:focus{outline:2px solid var(--amber);outline-offset:1px;}
-  form fieldset{border:0;min-width:0;}
-  form legend{font-size:0.8rem;font-family:"JetBrains Mono",monospace;color:var(--bark);margin-bottom:8px;}
-  .opts{display:grid;grid-template-columns:1fr 1fr;gap:8px 16px;}
-  form .opt{display:flex;align-items:center;gap:10px;margin:0;font-family:"Work Sans",sans-serif;font-size:0.92rem;color:var(--forest-deep);cursor:pointer;}
-  form .opt input{width:18px;height:18px;padding:0;margin:0;accent-color:var(--forest);flex-shrink:0;}
   .form-status{font-size:0.88rem;color:var(--bark);max-width:48ch;}
   .form-status:empty{display:none;}
+  .form-note{font-size:0.8rem;color:#5a5344;max-width:48ch;}
+  .form-note a,.form-status a{text-decoration:none;border-bottom:1px solid var(--moss);}
+  .form-status button{margin:0 0 0 4px;padding:0;background:none;border:0;border-bottom:1px solid var(--moss);border-radius:0;color:inherit;font:inherit;font-weight:400;cursor:pointer;align-self:auto;}
+  .footer-links{display:flex;flex-wrap:wrap;gap:6px 22px;}
+  .footer-links a{text-decoration:none;border-bottom:1px solid rgba(243,239,228,0.35);padding-bottom:1px;}
+  .footer-links a:hover,.footer-links a:focus-visible{color:var(--cream);border-bottom-color:var(--amber);}
 
   footer{background:var(--forest-deep);color:var(--cream-dim);padding:32px 0;}
   footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:0.82rem;}
@@ -209,7 +208,6 @@
   }
   @media (max-width:520px){
     .about-stats{grid-template-columns:1fr;}
-    .opts{grid-template-columns:1fr;}
   }
   @media (max-width:380px){
     header .wrap{padding:0 16px;}
@@ -415,7 +413,7 @@
     <form id="kontaktformular">
       <div>
         <label for="name">Name</label>
-        <input id="name" type="text" required>
+        <input id="name" type="text" autocomplete="name" required>
       </div>
       <div>
         <label for="telefon">Telefon (optional, für Rückfragen)</label>
@@ -425,12 +423,12 @@
         <label for="ort">Standort des Baums</label>
         <input id="ort" type="text">
       </div>
-
       <div>
         <label for="nachricht">Was steht an?</label>
         <textarea id="nachricht" rows="4" required></textarea>
       </div>
       <button type="submit">Anfrage senden</button>
+      <div class="form-note">Ihre Angaben verwenden wir nur zur Bearbeitung Ihrer Anfrage. Mehr dazu in der <a href="datenschutz.html">Datenschutzerklärung</a>.</div>
       <div class="form-status" id="form-status" role="status" aria-live="polite"></div>
     </form>
   </div>
@@ -438,11 +436,11 @@
 </main>
 
 <footer>
-  <div> <class="footer-content">
-    <div class="wrap">
-          <span>© 2026 Baumwart Alb</span>
-      <a href="impressum.html" target="_blank">Impressum</a> |
-      <a href="datenschutz.html" target="_blank">Datenschutz</a>
+  <div class="wrap">
+    <span>© 2026 Baumwart Alb</span>
+    <div class="footer-links">
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
     </div>
   </div>
 </footer>
@@ -453,36 +451,43 @@
     var status = document.getElementById('form-status');
     var empfaenger = 'baumwart@tuta.io';
 
+    // Liest ein Feld; fehlt es auf der Seite, wird einfach ein leerer Text geliefert (kein Fehler mehr)
+    function wert(id) { var el = document.getElementById(id); return el ? el.value.trim() : ''; }
+    function zeile(label, text) { return label + ': ' + (text || '–'); }
+
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-      function wert(id) { return document.getElementById(id).value.trim(); }
-      function auswahl(feld) {
-        var liste = [];
-        document.querySelectorAll('input[name="' + feld + '"]:checked').forEach(function (el) { liste.push(el.value); });
-        return liste.join(', ') || '–';
-      }
       var name = wert('name');
       var betreff = 'Anfrage über die Website – ' + name;
       var text = [
-        'Name: ' + name,
-        'Telefon: ' + (wert('telefon') || '–'),
-        'Standort des Baums: ' + (wert('ort') || '–'),
-        '',
-        'Gewünschte Leistung: ' + auswahl('leistung'),
-        'Anzahl Bäume: ' + (wert('anzahl') || '–'),
-        'Baumart: ' + (wert('baumart') || '–'),
-        'Zufahrt mit Fahrzeug: ' + auswahl('zufahrt'),
-        'Gewünschter Zeitraum: ' + (wert('termin') || '–'),
+        zeile('Name', name),
+        zeile('Telefon', wert('telefon')),
+        zeile('Standort des Baums', wert('ort')),
         '',
         'Nachricht:',
         wert('nachricht')
       ].join('\r\n');
+      var link = 'mailto:' + empfaenger + '?subject=' + encodeURIComponent(betreff) + '&body=' + encodeURIComponent(text);
 
-      window.location.href = 'mailto:' + empfaenger +
-        '?subject=' + encodeURIComponent(betreff) +
-        '&body=' + encodeURIComponent(text);
+      // Hinweis mit Ausweichmöglichkeiten (falls auf dem Gerät kein E-Mail-Programm eingerichtet ist)
+      status.textContent = '';
+      status.appendChild(document.createTextNode('Ihr E-Mail-Programm öffnet sich mit der vorbereiteten Nachricht. Bitte tippen Sie dort noch auf „Senden“. Öffnet sich nichts: '));
+      var a = document.createElement('a');
+      a.href = link; a.textContent = 'hier tippen';
+      status.appendChild(a);
+      status.appendChild(document.createTextNode(', '));
+      var kopieren = document.createElement('button');
+      kopieren.type = 'button'; kopieren.textContent = 'Nachricht kopieren';
+      kopieren.addEventListener('click', function () {
+        var fertig = function () { kopieren.textContent = 'Kopiert ✓'; };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(fertig, function () { window.prompt('Nachricht kopieren:', text); });
+        } else { window.prompt('Nachricht kopieren:', text); }
+      });
+      status.appendChild(kopieren);
+      status.appendChild(document.createTextNode(' oder schreiben Sie direkt an ' + empfaenger + '.'));
 
-      status.textContent = 'Ihr E-Mail-Programm öffnet sich mit der vorbereiteten Nachricht. Fotos der Bäume können Sie dort direkt anhängen. Bitte klicken Sie dann auf „Senden“. Falls sich nichts öffnet, schreiben Sie uns direkt an ' + empfaenger + '.';
+      window.location.href = link;
     });
   })();
 </script>
