@@ -1,0 +1,11 @@
+# Nach dem Hochladen in ".htaccess" umbenennen (mit Punkt am Anfang) und im Hauptverzeichnis der Website ablegen.
+# Leitet jeden Aufruf über http:// dauerhaft auf https:// um (auch am Handy) und merkt sich das im Browser (HSTS).
+
+RewriteEngine On
+RewriteCond %{HTTPS} !=on
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+<IfModule mod_headers.c>
+  Header always set Strict-Transport-Security "max-age=15552000" env=HTTPS
+</IfModule>

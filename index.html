@@ -2,6 +2,12 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
+<script>
+  // Seite immer verschlüsselt (https) öffnen – Rückfallebene zur Serverweiterleitung (.htaccess)
+  if (location.protocol === 'http:' && !/^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname)) {
+    location.replace('https://' + location.host + location.pathname + location.search + location.hash);
+  }
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Baumpflege &amp; zert. Obstbaumwart in Münsingen | Baumwart Alb</title>
 <meta name="description" content="Baumpflege, Obstbaumschnitt und Baumfällung in Münsingen und auf der Schwäbischen Alb. Zert. Obstbaumwart, Seilklettertechnik, Sturmschaden-Notdienst.">
@@ -125,8 +131,9 @@
 
   section{padding:80px 0;}
   .section-head{margin-bottom:48px;max-width:60ch;}
-  .section-head .eyebrow{color:var(--moss);}
-  .section-head h2{font-size:clamp(1.7rem,3vw,2.3rem);color:var(--forest-deep);}
+  .section-head .eyebrow,.about .eyebrow{font-size:clamp(1.05rem,2.8vw,1.2rem);letter-spacing:0.1em;font-weight:500;margin-bottom:14px;}
+  .section-head .eyebrow{color:#4f5d30;}
+  .section-head h2{font-size:clamp(1.95rem,3.8vw,2.7rem);color:var(--forest-deep);}
   .section-head p{color:#5a5344;margin-top:12px;}
 
   .services{background:var(--cream-dim);}
@@ -147,8 +154,8 @@
 
   .about{background:var(--forest);color:var(--cream-dim);}
   .about .wrap{display:block;}
-  .about .eyebrow{color:var(--amber);}
-  .about h2{color:var(--cream);font-size:clamp(1.7rem,3vw,2.2rem);margin-bottom:18px;}
+  .about .eyebrow{color:#e3b07a;}
+  .about h2{color:var(--cream);font-size:clamp(1.95rem,3.8vw,2.7rem);margin-bottom:18px;}
   .about p{color:var(--cream-dim);margin-bottom:16px;}
   .about-head{max-width:62ch;margin-bottom:44px;}
   .about-cols{margin-bottom:56px;}
@@ -169,7 +176,7 @@
   .stat .logos img + img{border-radius:2px;} 
 
   .contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;}
-  .contact h2{font-size:clamp(1.7rem,3vw,2.2rem);margin-bottom:16px;}
+  .contact h2{font-size:clamp(1.95rem,3.6vw,2.5rem);margin-bottom:16px;}
   .contact p{color:#5a5344;margin-bottom:26px;max-width:48ch;}
   .contact-list{list-style:none;font-family:"JetBrains Mono",monospace;font-size:0.9rem;display:flex;flex-direction:column;gap:10px;}
   .contact-list a{text-decoration:none;border-bottom:1px solid var(--moss);}
@@ -205,8 +212,8 @@
     .burger{display:block;}
     .header-icons{margin-left:auto;margin-right:12px;padding-left:0;border-left:0;}
     .hero .wrap{grid-template-columns:1fr;}
-    .hero{--d:min(112vw,480px);display:block;min-height:0;padding:24px 0 60px;}
-    .ring-graphic{position:relative;top:auto;left:auto;transform:none;order:-1;margin:0 calc(-1 * min(30vw,120px)) 12px auto;}
+    .hero{--d:min(88vw,360px);display:block;min-height:0;padding:28px 0 56px;}
+    .ring-graphic{position:relative;top:auto;left:auto;transform:none;order:-1;margin:0 calc((100% - var(--d)) / 2) 14px;}
     .service-grid{grid-template-columns:1fr;}
     .about-quali ul{grid-template-columns:1fr;}
     .about-stats{grid-template-columns:1fr 1fr;}
@@ -427,11 +434,11 @@
         <input id="telefon" type="tel" autocomplete="tel">
       </div>
       <div>
-        <label for="ort">Standort des Baums</label>
+        <label for="ort">Auftragsort</label>
         <input id="ort" type="text">
       </div>
       <div>
-        <label for="nachricht">Was steht an?</label>
+        <label for="nachricht">Was es zu tun gibt</label>
         <textarea id="nachricht" rows="4" required></textarea>
       </div>
       <button type="submit">Anfrage senden</button>
@@ -469,9 +476,9 @@
       var text = [
         zeile('Name', name),
         zeile('Telefon', wert('telefon')),
-        zeile('Standort des Baums', wert('ort')),
+        zeile('Auftragsort', wert('ort')),
         '',
-        'Nachricht:',
+        'Was es zu tun gibt:',
         wert('nachricht')
       ].join('\r\n');
       var link = 'mailto:' + empfaenger + '?subject=' + encodeURIComponent(betreff) + '&body=' + encodeURIComponent(text);

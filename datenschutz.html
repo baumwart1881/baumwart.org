@@ -2,6 +2,12 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
+<script>
+  // Seite immer verschlüsselt (https) öffnen – Rückfallebene zur Serverweiterleitung (.htaccess)
+  if (location.protocol === 'http:' && !/^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname)) {
+    location.replace('https://' + location.host + location.pathname + location.search + location.hash);
+  }
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Datenschutzerklärung – Baumwart Alb</title>
 <meta name="description" content="Datenschutzerklärung von Baumwart Alb: welche Daten beim Besuch der Website und bei der Kontaktaufnahme verarbeitet werden.">
@@ -73,8 +79,9 @@
     <h2>1. Verantwortlicher</h2>
     <p>
       Baumwart Alb<br>
-      S. Mengs<br>
-      72532 Gomadingen<br>
+      <mark>[Vor- und Nachname des Inhabers]</mark><br>
+      <mark>[Straße und Hausnummer]</mark><br>
+      72525 Münsingen<br>
       Telefon: <a href="tel:+4915121739943">+49 1512 1739943</a><br>
       E-Mail: <a href="mailto:baumwart@tuta.io">baumwart@tuta.io</a>
     </p>
@@ -83,11 +90,11 @@
     <p>Diese Website setzt keine Cookies ein und verwendet keine Analyse-, Tracking- oder Werbedienste. Es gibt keine Nutzerkonten. Auch die verwendeten Schriftarten werden von unserem eigenen Server ausgeliefert; dabei werden keine Daten an Google oder andere Dritte übermittelt.</p>
 
     <h2>3. Hosting und Server-Logfiles</h2>
-    <p>Hosting-Anbieter: GitHub Pages, operated by GitHub, Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, United States. Ein Auftragsverarbeitungsvertrag nach Art. 28 DSGVO ist verfügbar unter: https://github.com/customer-terms/github-data-protection-agreement.
     <p>Beim Aufruf der Website verarbeitet unser Hosting-Anbieter die Daten, die Ihr Browser automatisch übermittelt: IP-Adresse, Datum und Uhrzeit des Abrufs, aufgerufene Seite, Browsertyp und Betriebssystem sowie die zuvor besuchte Seite. Die Verarbeitung dient der Auslieferung, Stabilität und Sicherheit der Website. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einem sicheren und funktionsfähigen Internetauftritt). Die Speicherdauer richtet sich nach den Vorgaben des Hosting-Anbieters. Die Übertragung erfolgt verschlüsselt (HTTPS/TLS).</p>
+    <p>Hosting-Anbieter: <mark>[Name und Anschrift des Hosting-Anbieters; Auftragsverarbeitungsvertrag nach Art. 28 DSGVO abschließen]</mark></p>
 
     <h2>4. Kontaktaufnahme</h2>
-    <p><strong>Kontaktformular:</strong> Das Formular speichert Ihre Eingaben nicht auf dem Server dieser Website. Beim Absenden öffnet sich Ihr E-Mail-Programm mit einer vorbereiteten Nachricht. Erst wenn Sie diese dort versenden, erreichen uns Ihre Angaben: Name, gegebenenfalls Telefonnummer, Standort des Baums, Ihre Nachricht und Ihre E-Mail-Adresse.</p>
+    <p><strong>Kontaktformular:</strong> Das Formular speichert Ihre Eingaben nicht auf dem Server dieser Website. Beim Absenden öffnet sich Ihr E-Mail-Programm mit einer vorbereiteten Nachricht. Erst wenn Sie diese dort versenden, erreichen uns Ihre Angaben: Name, gegebenenfalls Telefonnummer, Auftragsort, Ihre Nachricht und Ihre E-Mail-Adresse.</p>
     <p><strong>E-Mail und Telefon:</strong> Wenn Sie uns per E-Mail oder Telefon kontaktieren, verarbeiten wir die von Ihnen mitgeteilten Daten (zum Beispiel Name, Rufnummer, E-Mail-Adresse, Inhalt der Anfrage und gegebenenfalls Fotos Ihrer Bäume).</p>
     <p>Wir verwenden diese Daten ausschließlich, um Ihre Anfrage zu beantworten und gegebenenfalls ein Angebot zu erstellen. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (vorvertragliche Maßnahmen und Vertragserfüllung), im Übrigen Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Beantwortung von Anfragen). Die Angabe Ihrer Daten ist freiwillig; ohne sie können wir Ihre Anfrage unter Umständen nicht bearbeiten. Ihre Nachricht wird über den E-Mail-Dienst verarbeitet, den wir für unser Postfach nutzen. Bitte beachten Sie, dass die E-Mail-Kommunikation Sicherheitslücken aufweisen kann.</p>
 
