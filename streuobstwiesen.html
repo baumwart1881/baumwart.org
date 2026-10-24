@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<script>
+  // Seite immer verschlüsselt (https) öffnen – Rückfallebene zur HTTPS-Erzwingung des Hosters (GitHub Pages)
+  if (location.protocol === 'http:' && !/^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname)) {
+    location.replace('https://' + location.host + location.pathname + location.search + location.hash);
+  }
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Streuobstwiesen in Schwaben: Geschichte, Bedeutung und Pflege | Baumwart Alb</title>
+<meta name="description" content="Wie die Streuobstwiesen der Schwäbischen Alb entstanden, warum sie bedroht sind und wie man sie erhält – ein Beitrag von Obstbaumwart Simon Mengs.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://baumwart.org/streuobstwiesen.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="de_DE">
+<meta property="og:site_name" content="Baumwart Alb">
+<meta property="og:url" content="https://baumwart.org/streuobstwiesen.html">
+<meta property="og:title" content="Streuobstwiesen in Schwaben: Geschichte, Bedeutung und Pflege">
+<meta property="og:description" content="Wie die Streuobstwiesen der Schwäbischen Alb entstanden, warum sie bedroht sind und wie man sie erhält – ein Beitrag von Obstbaumwart Simon Mengs.">
+<meta property="og:image" content="https://baumwart.org/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Baumwart Alb – Baumpflege und zertifizierter Obstbaumwart in Münsingen">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Vom Kulturgut zur ökologischen Schlüsselzone: Streuobstwiesen in Schwaben","inLanguage":"de","datePublished":"2026-10-24","author":{"@type":"Person","name":"Simon Mengs","jobTitle":"Obstbaumwart"},"publisher":{"@type":"Organization","name":"Baumwart Alb","url":"https://baumwart.org/"},"mainEntityOfPage":"https://baumwart.org/streuobstwiesen.html"}</script>
+<link rel="preload" href="fonts/WorkSans.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="fonts/Fraunces-Roman.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="fonts/Fraunces-Italic.woff" as="font" type="font/woff" crossorigin>
+<link rel="icon" href="favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" href="favicon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<style>
+  @font-face{font-family:"Fraunces";font-style:normal;font-weight:400 600;font-display:swap;src:url("fonts/Fraunces-Roman.woff") format("woff");}
+  @font-face{font-family:"Fraunces";font-style:italic;font-weight:400 600;font-display:swap;src:url("fonts/Fraunces-Italic.woff") format("woff");}
+  @font-face{font-family:"Work Sans";font-style:normal;font-weight:400 600;font-display:swap;src:url("fonts/WorkSans.woff") format("woff");}
+  @font-face{font-family:"JetBrains Mono";font-style:normal;font-weight:400 500;font-display:swap;src:url("fonts/JetBrainsMono.woff") format("woff");}
+
+  :root{--forest:#243626;--forest-deep:#182319;--bark:#4a3728;--moss:#8a9a5b;--cream:#f3efe4;--cream-dim:#e8e1d0;--amber:#c1732e;--ring:#d9cba8;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--cream);color:var(--forest-deep);font-family:"Work Sans",sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column;}
+  h1,h2{font-family:"Fraunces",serif;font-weight:600;letter-spacing:-0.01em;}
+  a{color:inherit;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 28px;width:100%;}
+  header{border-bottom:1px solid var(--ring);background:rgba(243,239,228,0.92);}
+  header .wrap{display:flex;align-items:center;justify-content:space-between;height:72px;gap:16px;}
+  .logo{display:flex;align-items:center;gap:10px;font-family:"Fraunces",serif;font-weight:600;font-size:1.15rem;color:var(--forest-deep);text-decoration:none;}
+  .logo svg{flex-shrink:0;}
+  .back{font-size:0.92rem;text-decoration:none;border-bottom:1px solid var(--moss);padding-bottom:1px;white-space:nowrap;}
+  .back:hover,.back:focus-visible{color:var(--amber);}
+  main{flex:1;padding:64px 0 88px;}
+  main .wrap{max-width:760px;}
+  .eyebrow{font-family:"JetBrains Mono",monospace;font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--amber);display:block;margin-bottom:14px;}
+  h1{font-size:clamp(2rem,4.5vw,2.8rem);line-height:1.1;margin-bottom:18px;}
+  h2{font-size:1.3rem;line-height:1.25;margin:40px 0 10px;}
+  p,li{color:#3d4a3a;}
+  p{margin-bottom:12px;max-width:68ch;}
+  ul{margin:0 0 12px 1.2rem;max-width:68ch;}
+  li{margin-bottom:6px;}
+  main a{text-decoration:none;border-bottom:1px solid var(--moss);}
+  main a:hover{color:var(--amber);}
+  .lead{font-size:1.05rem;}
+  mark{background:#f6e3b4;color:var(--forest-deep);padding:0 4px;border-radius:2px;}
+  footer{background:var(--forest-deep);color:var(--cream-dim);padding:32px 0;}
+  footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:0.82rem;}
+  .footer-links{display:flex;flex-wrap:wrap;gap:6px 22px;}
+  .footer-links a{text-decoration:none;border-bottom:1px solid rgba(243,239,228,0.35);padding-bottom:1px;}
+  .footer-links a:hover,.footer-links a:focus-visible,.footer-links a[aria-current]{color:var(--cream);border-bottom-color:var(--amber);}
+  @media (max-width:520px){main{padding:44px 0 64px;} header .wrap{padding:0 16px;} .wrap{padding:0 20px;} .logo{font-size:1.05rem;}}
+
+  :root{--amber-dark:#94531d;}
+  .eyebrow{color:var(--amber-dark);}
+  header .wrap{gap:16px;}
+  .hright{display:flex;align-items:center;gap:18px;}
+  .header-icons{display:flex;align-items:center;gap:8px;padding-left:20px;border-left:1px solid var(--ring);}
+  .icon-link{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border:1px solid var(--forest);border-radius:2px;color:var(--forest);transition:background .15s ease,color .15s ease;}
+  .icon-link svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;}
+  .icon-link:hover,.icon-link:focus-visible{background:var(--forest);color:var(--cream);}
+  main a.icon-link{border-bottom:1px solid var(--forest);}
+  article h1{font-size:clamp(1.9rem,4.2vw,2.7rem);line-height:1.12;margin-bottom:12px;}
+  .byline{font-size:0.95rem;color:#5a5344;margin-bottom:28px;}
+  .lead{font-size:1.15rem;line-height:1.6;color:var(--forest-deep);}
+  .facts{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--ring);border:1px solid var(--ring);margin:34px 0 8px;}
+  .facts div{background:var(--cream-dim);padding:18px 20px;}
+  .facts b{display:block;font-family:"Fraunces",serif;font-weight:600;font-size:1.7rem;line-height:1.1;color:var(--forest-deep);margin-bottom:6px;}
+  .facts span{font-size:0.88rem;color:#5a5344;line-height:1.4;display:block;}
+  .facts-label{font-family:"JetBrains Mono",monospace;font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:#4f5d30;margin-top:34px;display:block;}
+  article h2{font-size:clamp(1.45rem,2.6vw,1.75rem);margin:46px 0 12px;}
+  article p{font-size:1.03rem;line-height:1.7;max-width:66ch;}
+  .cta-box{background:var(--forest);color:var(--cream);border-radius:2px;padding:30px 30px 32px;margin:54px 0 10px;}
+  .cta-box h2{color:var(--cream);margin:0 0 10px;font-size:1.5rem;}
+  .cta-box p{color:var(--cream-dim);margin-bottom:20px;}
+  .cta-actions{display:flex;flex-wrap:wrap;gap:12px;}
+  .btn{display:inline-block;padding:13px 24px;border-radius:2px;font-weight:500;text-decoration:none;font-size:0.95rem;transition:background .15s ease,color .15s ease;border-bottom:0;}
+  main .btn-primary{background:var(--amber-dark);color:var(--cream);border-bottom:0;}
+  main .btn-primary:hover{background:#7d4416;color:var(--cream);}
+  main .btn-ghost{border:1px solid var(--cream);color:var(--cream);}
+  main .btn-ghost:hover{background:var(--cream);color:var(--forest-deep);}
+  .faq{margin-top:48px;}
+  .faq h2{margin-top:0;}
+  .faq-list{border-top:1px solid var(--ring);margin-top:14px;}
+  .faq-item{border-bottom:1px solid var(--ring);}
+  .faq-item summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:19px 0;font-family:"Fraunces",serif;font-weight:600;font-size:1.1rem;color:var(--forest-deep);}
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item summary::after{content:"+";flex-shrink:0;font-family:"JetBrains Mono",monospace;font-size:1.3rem;color:var(--amber-dark);}
+  .faq-item[open] summary::after{content:"–";}
+  .faq-item summary:focus-visible{outline:2px solid var(--amber);outline-offset:2px;}
+  .faq-item p{color:#5a5344;font-size:0.97rem;max-width:62ch;padding:0 0 20px;margin:0;}
+  .backlink{display:inline-block;margin-top:34px;font-size:0.95rem;}
+  @media (max-width:640px){.back{display:none;} .facts{grid-template-columns:1fr;} .cta-box{padding:24px 22px 26px;} .header-icons{border-left:0;padding-left:0;}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="index.html">
+      <svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true"><circle cx="13" cy="13" r="12" stroke="#4a3728" stroke-width="1.4"/><circle cx="13" cy="13" r="8" stroke="#8a9a5b" stroke-width="1.2"/><circle cx="13" cy="13" r="5" stroke="#c1732e" stroke-width="1.2"/><circle cx="13" cy="13" r="2.2" fill="#4a3728"/></svg>
+      Baumwart Alb
+    </a>
+    <div class="hright">
+      <a class="back" href="index.html">← Zur Startseite</a>
+      <div class="header-icons">
+      <a class="icon-link" href="tel:+4915121739943" aria-label="Anrufen: +49 1512 1739 943" title="Anrufen"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></a>
+      <a class="icon-link" href="mailto:baumwart@tuta.io" aria-label="E-Mail schreiben an baumwart@tuta.io" title="E-Mail schreiben"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></a>
+    </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+  <article>
+    <span class="eyebrow">Wissen · Streuobstwiesen</span>
+    <h1>Vom Kulturgut zur ökologischen Schlüsselzone: Streuobstwiesen in Schwaben</h1>
+    <p class="byline">Von Simon Mengs, Obstbaumwart</p>
+    <p class="lead">Auf der Schwäbischen Alb und im Raum Reutlingen gehören Streuobstwiesen seit Jahrhunderten zum vertrauten Landschaftsbild. Wie ist diese Kulturlandschaft entstanden, und warum rückt sie heute wieder in den Blick?</p>
+
+    <span class="facts-label">Auf einen Blick</span>
+    <div class="facts">
+      <div><b>bis zu 5.000</b><span>Tier- und Pflanzenarten können auf einer Streuobstwiese leben</span></div>
+      <div><b>Herbst</b><span>ist die richtige Zeit, um junge Hochstämme nachzupflanzen</span></div>
+      <div><b>2–3</b><span>Erziehungsschnitte in den ersten fünf Jahren</span></div>
+      <div><b>1–2×</b><span>mähen oder beweiden, dazu Totholz belassen, wo es nicht stört</span></div>
+    </div>
+
+    <h2>Historische Wurzeln</h2>
+    <p>Die großflächige Anlage von Streuobstwiesen begann im Mittelalter und erreichte im 19. Jahrhundert ihren Höhepunkt. Die Gründe waren vielfältig: Obst, Saft und Most dienten der Selbstversorgung, Abgaben wurden teils in Naturalien entrichtet, und das Holz lieferte Brennmaterial und wertvollen Rohstoff für das Handwerk. Auf den trockenen Böden der Alb gediehen robuste Birnen-, Apfel- und Kirschsorten. Die Bäume wurden hochstämmig gepflanzt, damit darunter Wiesenkräuter und Heu für das Vieh wachsen konnten. Mit dieser Doppelnutzung gewannen die Menschen dem Land mehr ab.</p>
+    <h2>Ein bedrohtes Erbe</h2>
+    <p>Heute gehen die Bestände deutschlandweit zurück. Nach Schätzungen von Naturschutzverbänden ist seit 1950 ein Großteil der Flächen verschwunden, verdrängt durch wachsende Ortschaften und durch Rodungsprämien, die lange gezahlt wurden. Zwar sind Streuobstbestände in Baden-Württemberg inzwischen gesetzlich geschützt, doch viele Wiesen werden nicht mehr bewirtschaftet. Die Bäume überaltern, Lücken werden nicht nachgepflanzt, die wertvollen Habitate verschwinden. Mit der offenen Struktur gehen auch die Brutmöglichkeiten für bedrohte Vogelarten und Insekten verloren.</p>
+    <h2>Ökologische Bedeutung</h2>
+    <p>Streuobstwiesen zählen zu den artenreichsten Lebensräumen Mitteleuropas. Nach Angaben von Naturschutzverbänden können sich auf einer einzigen Wiese bis zu 5.000 Tier- und Pflanzenarten ansiedeln. Vögel wie Neuntöter und Wendehals, Fledermäuse, Käfer und Wildbienen finden hier Nahrung und Nistplätze. Allein in Baden-Württemberg sind nach Angaben des NABU rund 40 Prozent der heimischen Wildbienenarten auf Streuobstwiesen unterwegs – bei etwa 480 Arten im Land sind das rund 200, darunter viele gefährdete. Alte Bäume mit Totholz und Höhlen bieten Strukturen, die sich nicht ersetzen lassen. Der Lebensraum Streuobstwiese selbst steht dazu in vielen Bundesländern auf der Roten Liste der gefährdeten Biotoptypen.</p>
+    <h2>Warum Streuobst wieder gefragt ist</h2>
+    <p>Mehrere Entwicklungen sprechen für eine Renaissance. Am Ortsrand sorgen die Bäume für ein freundliches Mikroklima an langen heißen Sommertagen. Ihr Schatten schützt den Boden und mögliche Unterkulturen vor zu starker Sonneneinstrahlung, was immer wichtiger wird. Die Disruption des globalen Handels zeigt, dass wir auf regionale Lebensmittel nicht verzichten können. Tatsächlich kann sich Streuobst auch wirtschaftlich lohnen: Saft und Most aus heimischem Obst lassen sich direkt vermarkten und schaffen zusätzliche Einnahmen. Auch Agroforsttechniken und die altbewährte Unternutzung werden an Bedeutung gewinnen.</p>
+    <h2>Erhalt braucht Pflege und viele Hände</h2>
+    <p>Ohne Pflege verschwinden Streuobstwiesen innerhalb weniger Jahrzehnte. Entscheidend sind das Nachpflanzen junger Hochstämme (der Herbst ist dafür die richtige Zeit), zwei bis drei Erziehungsschnitte in den ersten fünf Jahren, ein- bis zweimaliges Mähen oder Beweiden und das Belassen von Totholz, wo es nicht stört.</p>
+    <p>Das nötige Wissen lässt sich lernen. Obst- und Gartenbauvereine, Landratsämter und Naturschutzverbände bieten Schnittkurse an, und viele Streuobstinitiativen suchen Mitstreiter oder vermitteln Baumpatenschaften. Wer keine eigene Wiese hat, kann Saft und Obst aus der Region kaufen und so jene unterstützen, die sich um den Erhalt kümmern.</p>
+    <p>Denn unsere Streuobstwiesen sind eine besonders wertvolle Kulturlandschaft. Ihr Wert verdient Pflege und offene Augen – für ihre besondere Schönheit und ihren unersetzbaren Nutzen.</p>
+
+    <div class="cta-box">
+      <h2>Ihre Streuobstwiese braucht Pflege oder Planung?</h2>
+      <p>Wir pflegen und erhalten Streuobstwiesen und beraten Sie gern bei der Planung neuer Anlagen.</p>
+      <div class="cta-actions">
+        <a class="btn btn-primary" href="tel:+4915121739943">Jetzt anrufen</a>
+        <a class="btn btn-ghost" href="index.html#kontakt">Anfrage senden</a>
+      </div>
+    </div>
+
+    <section class="faq" aria-labelledby="faq-titel">
+      <h2 id="faq-titel">Häufige Fragen zur Streuobstwiese</h2>
+      <div class="faq-list">
+      <details class="faq-item"><summary>Wann pflanzt man junge Hochstämme am besten?</summary><p>Der Herbst ist die richtige Zeit, um junge Hochstämme nachzupflanzen. Nachpflanzen ist wichtig, weil sonst Lücken entstehen und die Wiese überaltert.</p></details>
+      <details class="faq-item"><summary>Wie viel Pflege braucht eine Streuobstwiese?</summary><p>Entscheidend sind zwei bis drei Erziehungsschnitte in den ersten fünf Jahren, ein- bis zweimaliges Mähen oder Beweiden und das Belassen von Totholz, wo es nicht stört. Ohne Pflege verschwinden Streuobstwiesen innerhalb weniger Jahrzehnte.</p></details>
+      <details class="faq-item"><summary>Wo kann ich lernen, Obstbäume zu schneiden?</summary><p>Obst- und Gartenbauvereine, Landratsämter und Naturschutzverbände bieten Schnittkurse an. Viele Streuobstinitiativen suchen außerdem Mitstreiter oder vermitteln Baumpatenschaften.</p></details>
+      <details class="faq-item"><summary>Wie kann ich helfen, wenn ich keine eigene Wiese habe?</summary><p>Kaufen Sie Saft und Obst aus der Region und unterstützen Sie so jene, die sich um den Erhalt kümmern. Auch bei Streuobstinitiativen vor Ort sind Helfer willkommen.</p></details>
+      </div>
+    </section>
+
+    <a class="backlink" href="index.html">← Zurück zur Startseite</a>
+  </article>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span data-jahr>2026</span> Baumwart Alb</span>
+    <div class="footer-links">
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('[data-jahr]').forEach(function (el) { el.textContent = new Date().getFullYear(); });
+</script>
+</body>
+</html>
