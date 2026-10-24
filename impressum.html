@@ -104,13 +104,18 @@
 
 <footer>
   <div class="wrap">
-    <span>© 2026 Baumwart Alb</span>
+    <span>© <span data-jahr>2026</span> Baumwart Alb</span>
     <div class="footer-links">
       <a href="impressum.html" aria-current="page">Impressum</a>
       <a href="datenschutz.html">Datenschutz</a>
     </div>
   </div>
 </footer>
+
+<script>
+  // Copyright-Jahr automatisch auf das aktuelle Jahr setzen (ohne JavaScript bleibt 2026 stehen)
+  document.querySelectorAll('[data-jahr]').forEach(function (el) { el.textContent = new Date().getFullYear(); });
+</script>
 
 </body>
 </html>

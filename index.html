@@ -211,7 +211,7 @@
   footer{background:var(--forest-deep);color:var(--cream-dim);padding:32px 0;}
   footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:0.82rem;}
 
-  header{transition:transform .3s ease;}
+  header{transition:transform .55s cubic-bezier(.32,.72,0,1),opacity .45s ease;}
   .hero p.hero-lead{font-size:1.2rem;font-weight:500;color:var(--forest-deep);margin-bottom:14px;}
   .about-history summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:14px;font-family:"Fraunces",serif;font-weight:600;font-size:1.2rem;color:var(--cream);}
   .about-history summary::-webkit-details-marker{display:none;}
@@ -221,6 +221,15 @@
   .about-history p{margin-top:14px;}
   .faq{background:var(--cream-dim);}
   .faq-list{max-width:760px;border-top:1px solid var(--ring);}
+  .faq-all>summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:12px;padding:13px 22px;border:1.5px solid var(--forest);border-radius:999px;font-weight:500;color:var(--forest-deep);transition:background .2s ease,color .2s ease;}
+  .faq-all>summary::-webkit-details-marker{display:none;}
+  .faq-all>summary::after{content:"+";font-family:"JetBrains Mono",monospace;font-size:1.2rem;line-height:1;color:var(--amber-dark);}
+  .faq-all[open]>summary::after{content:"–";}
+  .faq-all>summary:focus-visible{background:var(--forest);color:var(--cream);outline:2px solid var(--amber);outline-offset:3px;}
+  .faq-all>summary:focus-visible::after{color:#e3b07a;}
+  @media (hover:hover){.faq-all>summary:hover{background:var(--forest);color:var(--cream);}.faq-all>summary:hover::after{color:#e3b07a;}}
+  .faq-all[open]>summary{margin-bottom:28px;}
+  .faq-all:not([open]) .when-open,.faq-all[open] .when-closed{display:none;}
   .faq-item{border-bottom:1px solid var(--ring);}
   .faq-item summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:20px 0;font-family:"Fraunces",serif;font-weight:600;font-size:1.1rem;color:var(--forest-deep);}
   .faq-item summary::-webkit-details-marker{display:none;}
@@ -235,7 +244,8 @@
     #menu-toggle:checked ~ nav{max-height:320px;visibility:visible;padding:20px 28px;border-bottom-color:var(--ring);transition:max-height .3s ease,padding .3s ease,border-color .3s ease;}
     .burger{display:block;}
     .header-icons{margin-left:auto;margin-right:12px;padding-left:0;border-left:0;}
-    header.hide{transform:translateY(-100%);}
+    header{will-change:transform;}
+    header.hide{transform:translate3d(0,-100%,0);opacity:0;}
     .mobile-bar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:40;gap:1px;background:var(--forest-deep);transition:transform .3s ease;}
     .mobile-bar a{flex:1;text-align:center;padding:15px 10px;color:var(--cream);background:var(--forest);text-decoration:none;font-weight:500;font-size:0.95rem;}
     .mobile-bar a.mb-call{background:var(--amber-dark);}
@@ -262,7 +272,7 @@
   }
   @media (prefers-reduced-motion: reduce){
     html{scroll-behavior:auto;}
-    nav,#menu-toggle:checked ~ nav,header,.mobile-bar{transition:none;}
+    nav,#menu-toggle:checked ~ nav,.mobile-bar{transition:none;}
   }
 </style>
 </head>
@@ -453,7 +463,9 @@
       <h2>Häufige Fragen</h2>
       <p>Kurz beantwortet, was uns Kunden am häufigsten fragen. Alles Weitere besprechen wir gern persönlich.</p>
     </div>
-    <div class="faq-list">
+    <details class="faq-all" id="faq-all">
+      <summary><span class="when-closed">Alle Fragen anzeigen</span><span class="when-open">Fragen ausblenden</span></summary>
+      <div class="faq-list">
       <details class="faq-item"><summary>Wie läuft eine Anfrage ab, und kann ich vorab Fotos schicken?</summary><p>Schreiben oder rufen Sie uns an. In der Regel melden wir uns innerhalb eines Werktags mit einem Terminvorschlag. Fotos Ihrer Bäume helfen für eine erste Einschätzung, ersetzen aber nicht den Vor-Ort-Termin, bei dem wir die Bäume gemeinsam mit Ihnen ansehen.</p></details>
       <details class="faq-item"><summary>Was kostet eine Baumpflege oder Baumfällung?</summary><p>Einen Pauschalpreis gibt es nicht, denn jeder Baum ist anders. Den Preis bestimmen vor allem Größe und Zustand des Baums, die Zugänglichkeit, der Arbeitsaufwand, das Beräumen und Häckseln des Schnittguts sowie die Anfahrt. Nach dem Vor-Ort-Termin erhalten Sie ein klares, unverbindliches Angebot ohne versteckte Positionen.</p></details>
       <details class="faq-item"><summary>Brauche ich eine Genehmigung, um einen Baum zu fällen?</summary><p>Das hängt vom Baum und vom Standort ab. Viele Gemeinden haben eine Baumschutzsatzung, nach der Fällungen ab einer bestimmten Größe genehmigungspflichtig sind. Dazu kommen Naturschutz- und Artenschutzregeln: In der Vogelbrutzeit (etwa von März bis September) sind Fällungen und starke Rückschnitte oft nicht erlaubt. Wir besprechen das beim Vor-Ort-Termin mit Ihnen; verbindlich entscheidet die zuständige Behörde, meist Ihre Gemeinde oder Stadt.</p></details>
@@ -463,7 +475,8 @@
       <details class="faq-item"><summary>Was ist eine Baumkontrolle, und wann ist sie sinnvoll?</summary><p>Bei der Baumkontrolle prüfen wir einen Baum auf Stand-, Bruch- und Verkehrssicherheit. Sie ist vor allem bei Bäumen an Wegen, Straßen, Spielplätzen oder Gebäuden wichtig, weil Eigentümer dafür verantwortlich sind, dass von ihren Bäumen keine Gefahr ausgeht. Wie oft kontrolliert werden sollte, hängt von Art, Alter und Zustand des Baums ab.</p></details>
       <details class="faq-item"><summary>Was tue ich bei einem Sturmschaden?</summary><p>Halten Sie Abstand und sperren Sie den Bereich ab. Bei akuter Gefahr für Personen rufen Sie die Feuerwehr (112). Hängt ein Baum in Stromleitungen, gilt: Abstand halten, nichts berühren und den Netzbetreiber verständigen. Danach rufen Sie uns an – wir sichern beschädigte Bäume schnell.</p></details>
       <details class="faq-item"><summary>In welchem Gebiet sind Sie tätig?</summary><p>Unser Standort ist Münsingen, unser Schwerpunkt Münsingen und Umgebung auf der Schwäbischen Alb. Für Kunden fahren wir aber auch weite Strecken. Fragen Sie einfach an, auch wenn Sie weiter entfernt wohnen.</p></details>
-    </div>
+      </div>
+    </details>
   </div>
 </section>
 
@@ -505,7 +518,7 @@
 
 <footer>
   <div class="wrap">
-    <span>© 2026 Baumwart Alb</span>
+    <span>© <span data-jahr>2026</span> Baumwart Alb</span>
     <div class="footer-links">
       <a href="impressum.html">Impressum</a>
       <a href="datenschutz.html">Datenschutz</a>
@@ -620,6 +633,22 @@
       new IntersectionObserver(function (e) { bar.classList.toggle('away', e[0].isIntersecting); }, { threshold: 0.15 }).observe(kontakt);
     }
   })();
+</script>
+
+<script>
+  // FAQ: beim Sprung über das Menü (oder einen Link auf #faq) automatisch aufklappen
+  (function () {
+    var all = document.getElementById('faq-all');
+    if (!all) return;
+    function auf() { all.open = true; }
+    document.querySelectorAll('a[href="#faq"]').forEach(function (a) { a.addEventListener('click', auf); });
+    if (location.hash === '#faq') auf();
+  })();
+</script>
+
+<script>
+  // Copyright-Jahr automatisch auf das aktuelle Jahr setzen (ohne JavaScript bleibt 2026 stehen)
+  document.querySelectorAll('[data-jahr]').forEach(function (el) { el.textContent = new Date().getFullYear(); });
 </script>
 
 </body>
