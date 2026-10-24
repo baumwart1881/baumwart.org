@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <script>
-  // Seite immer verschlüsselt (https) öffnen – Rückfallebene zur Serverweiterleitung (.htaccess)
+  // Seite immer verschlüsselt (https) öffnen – Rückfallebene zur HTTPS-Erzwingung des Hosters (GitHub Pages)
   if (location.protocol === 'http:' && !/^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname)) {
     location.replace('https://' + location.host + location.pathname + location.search + location.hash);
   }
@@ -87,24 +87,30 @@
     </p>
 
     <h2>2. Keine Cookies, kein Tracking</h2>
-    <p>Diese Website setzt keine Cookies ein und verwendet keine Analyse-, Tracking- oder Werbedienste. Es gibt keine Nutzerkonten. Auch die verwendeten Schriftarten werden von unserem eigenen Server ausgeliefert; dabei werden keine Daten an Google oder andere Dritte übermittelt.</p>
+    <p>Diese Website setzt keine Cookies ein und verwendet keine Analyse-, Tracking- oder Werbedienste. Es gibt keine Nutzerkonten. Auch die verwendeten Schriftarten sind lokal eingebunden und werden zusammen mit der Website ausgeliefert; dabei werden keine Daten an Google oder andere Schriftarten-Anbieter übermittelt.</p>
 
     <h2>3. Hosting und Server-Logfiles</h2>
-    <p>Beim Aufruf der Website verarbeitet unser Hosting-Anbieter die Daten, die Ihr Browser automatisch übermittelt: IP-Adresse, Datum und Uhrzeit des Abrufs, aufgerufene Seite, Browsertyp und Betriebssystem sowie die zuvor besuchte Seite. Die Verarbeitung dient der Auslieferung, Stabilität und Sicherheit der Website. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einem sicheren und funktionsfähigen Internetauftritt). Die Speicherdauer richtet sich nach den Vorgaben des Hosting-Anbieters. Die Übertragung erfolgt verschlüsselt (HTTPS/TLS).</p>
-    <p>Hosting-Anbieter: <mark>[Name und Anschrift des Hosting-Anbieters; Auftragsverarbeitungsvertrag nach Art. 28 DSGVO abschließen]</mark></p>
+    <p>Diese Website wird über GitHub Pages gehostet. Anbieter ist die GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. Beim Aufruf der Website verarbeitet GitHub die Daten, die Ihr Browser automatisch übermittelt: IP-Adresse, Datum und Uhrzeit des Abrufs, aufgerufene Seite, Browsertyp und Betriebssystem sowie die zuvor besuchte Seite. Die Verarbeitung dient der Auslieferung, Stabilität und Sicherheit der Website. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einem sicheren und funktionsfähigen Internetauftritt). Wie lange GitHub diese Daten speichert, bestimmt GitHub; darauf haben wir keinen Einfluss. Die Übertragung erfolgt verschlüsselt (HTTPS/TLS).</p>
+    <p>Weitere Informationen finden Sie in der <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">Datenschutzerklärung von GitHub</a> (englisch).</p>
 
-    <h2>4. Kontaktaufnahme</h2>
+    <h2>4. Domain und Namensauflösung</h2>
+    <p>Unsere Domain baumwart.org ist bei der INWX GmbH &amp; Co. KG, Prinzessinnenstraße 30, 10969 Berlin, registriert. Damit Ihr Browser die Website findet, wird die Domain über die Nameserver von INWX in die Serveradresse aufgelöst. Dabei können technisch bedingt Verbindungsdaten verarbeitet werden, insbesondere die IP-Adresse des anfragenden DNS-Servers (in der Regel der Ihres Internetanbieters). Die Inhalte dieser Website liegen nicht bei INWX. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer zuverlässig erreichbaren Website).</p>
+
+    <h2>5. Übermittlung in die USA</h2>
+    <p>Durch das Hosting bei GitHub können Daten in die USA übermittelt und dort verarbeitet werden. GitHub ist nach eigenen Angaben unter dem EU-U.S. Data Privacy Framework zertifiziert; für die Übermittlung besteht damit ein Angemessenheitsbeschluss der EU-Kommission (Art. 45 DSGVO). Ergänzend stützt sich GitHub nach eigenen Angaben auf die Standardvertragsklauseln der EU-Kommission (Art. 46 Abs. 2 lit. c DSGVO).</p>
+
+    <h2>6. Kontaktaufnahme</h2>
     <p><strong>Kontaktformular:</strong> Das Formular speichert Ihre Eingaben nicht auf dem Server dieser Website. Beim Absenden öffnet sich Ihr E-Mail-Programm mit einer vorbereiteten Nachricht. Erst wenn Sie diese dort versenden, erreichen uns Ihre Angaben: Name, gegebenenfalls Telefonnummer, Auftragsort, Ihre Nachricht und Ihre E-Mail-Adresse.</p>
     <p><strong>E-Mail und Telefon:</strong> Wenn Sie uns per E-Mail oder Telefon kontaktieren, verarbeiten wir die von Ihnen mitgeteilten Daten (zum Beispiel Name, Rufnummer, E-Mail-Adresse, Inhalt der Anfrage und gegebenenfalls Fotos Ihrer Bäume).</p>
     <p>Wir verwenden diese Daten ausschließlich, um Ihre Anfrage zu beantworten und gegebenenfalls ein Angebot zu erstellen. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (vorvertragliche Maßnahmen und Vertragserfüllung), im Übrigen Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Beantwortung von Anfragen). Die Angabe Ihrer Daten ist freiwillig; ohne sie können wir Ihre Anfrage unter Umständen nicht bearbeiten. Ihre Nachricht wird über den E-Mail-Dienst verarbeitet, den wir für unser Postfach nutzen. Bitte beachten Sie, dass die E-Mail-Kommunikation Sicherheitslücken aufweisen kann.</p>
 
-    <h2>5. Speicherdauer</h2>
-    <p>Wir speichern Ihre Daten nur so lange, wie es für die genannten Zwecke erforderlich ist. Anfragen löschen wir nach abschließender Bearbeitung, sofern keine gesetzlichen Aufbewahrungspflichten entgegenstehen (zum Beispiel handels- und steuerrechtliche Fristen bei einem erteilten Auftrag).</p>
+    <h2>7. Speicherdauer</h2>
+    <p>Wir speichern Ihre Daten nur so lange, wie es für die genannten Zwecke erforderlich ist. Anfragen löschen wir nach abschließender Bearbeitung, sofern keine gesetzlichen Aufbewahrungspflichten entgegenstehen (zum Beispiel handels- und steuerrechtliche Fristen bei einem erteilten Auftrag). Für Daten, die bei GitHub und INWX anfallen (Ziffern 3 und 4), gelten deren Speicherfristen.</p>
 
-    <h2>6. Weitergabe von Daten</h2>
-    <p>Eine Weitergabe Ihrer Daten an Dritte erfolgt nur an die oben genannten technischen Dienstleister oder wenn wir gesetzlich dazu verpflichtet sind. Eine automatisierte Entscheidungsfindung einschließlich Profiling findet nicht statt.</p>
+    <h2>8. Weitergabe von Daten</h2>
+    <p>Eine Weitergabe Ihrer Daten an Dritte erfolgt nur an die oben genannten technischen Dienstleister (GitHub für das Hosting, INWX für die Domain, der E-Mail-Dienst unseres Postfachs) oder wenn wir gesetzlich dazu verpflichtet sind. Eine automatisierte Entscheidungsfindung einschließlich Profiling findet nicht statt.</p>
 
-    <h2>7. Ihre Rechte</h2>
+    <h2>9. Ihre Rechte</h2>
     <p>Sie haben gegenüber uns folgende Rechte hinsichtlich der Sie betreffenden personenbezogenen Daten:</p>
     <ul>
       <li>Auskunft (Art. 15 DSGVO)</li>
@@ -116,7 +122,7 @@
     </ul>
     <p>Eine erteilte Einwilligung können Sie jederzeit mit Wirkung für die Zukunft widerrufen. Wenden Sie sich dazu formlos an die oben genannten Kontaktdaten.</p>
 
-    <h2>8. Beschwerderecht</h2>
+    <h2>10. Beschwerderecht</h2>
     <p>Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren. Für uns zuständig ist der Landesbeauftragte für den Datenschutz und die Informationsfreiheit Baden-Württemberg, Lautenschlagerstraße 20, 70173 Stuttgart, E-Mail: poststelle@lfdi.bwl.de, <a href="https://www.baden-wuerttemberg.datenschutz.de" target="_blank" rel="noopener">www.baden-wuerttemberg.datenschutz.de</a>.</p>
 
     <p style="margin-top:32px;font-size:0.9rem;">Stand: Oktober 2026</p>

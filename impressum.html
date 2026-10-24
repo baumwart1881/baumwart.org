@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <script>
-  // Seite immer verschlüsselt (https) öffnen – Rückfallebene zur Serverweiterleitung (.htaccess)
+  // Seite immer verschlüsselt (https) öffnen – Rückfallebene zur HTTPS-Erzwingung des Hosters (GitHub Pages)
   if (location.protocol === 'http:' && !/^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname)) {
     location.replace('https://' + location.host + location.pathname + location.search + location.hash);
   }
